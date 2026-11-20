@@ -19,7 +19,7 @@ phone over Bluetooth LE.
 > repository. A Meshtastic firmware
 > variant for revision 0.1 is under review as a draft: see [Meshtastic firmware](#meshtastic-firmware).
 
-<a href="https://www.pcbway.com/project/shareproject/LM20MeshNode_52978000.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
+<a href="https://www.pcbway.com/project/shareproject/LM20MeshNode_V2_18401d35.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
 ## Features
 
