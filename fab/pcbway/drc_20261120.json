@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-11-12T16:53:00",
+    "date": "2026-11-20T16:47:47",
     "ignored_checks": [
         {
             "description": "Footprint has no courtyard defined",
@@ -253,81 +253,12 @@
                     "uuid": "cf0aa06f-4153-439b-9e36-a698afd49e1b"
                 },
                 {
-                    "description": "Pad 2 [GND] of C201 on F.Cu",
-                    "pos": {
-                        "x": 127.8,
-                        "y": 61.34
-                    },
-                    "uuid": "bb4d0eea-5f06-4d33-9846-d20d71efe28a"
-                }
-            ],
-            "severity": "error",
-            "type": "starved_thermal"
-        },
-        {
-            "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
-            "items": [
-                {
-                    "description": "Zone 'GND_F' [GND] on F.Cu, priority 0",
-                    "pos": {
-                        "x": 100.0,
-                        "y": 60.0
-                    },
-                    "uuid": "cf0aa06f-4153-439b-9e36-a698afd49e1b"
-                },
-                {
-                    "description": "Pad 2 [GND] of C403 on F.Cu",
-                    "pos": {
-                        "x": 128.82,
-                        "y": 95.06
-                    },
-                    "uuid": "6abb734c-7a25-4f14-b5c5-21e55276cf2f"
-                }
-            ],
-            "severity": "error",
-            "type": "starved_thermal"
-        },
-        {
-            "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
-            "items": [
-                {
-                    "description": "Zone 'GND_F' [GND] on F.Cu, priority 0",
-                    "pos": {
-                        "x": 100.0,
-                        "y": 60.0
-                    },
-                    "uuid": "cf0aa06f-4153-439b-9e36-a698afd49e1b"
-                },
-                {
                     "description": "Pad 2 [GND] of C101 on F.Cu",
                     "pos": {
                         "x": 130.87,
                         "y": 129.28
                     },
                     "uuid": "931ac8f4-4ee7-4594-a2de-b5886115a0a5"
-                }
-            ],
-            "severity": "error",
-            "type": "starved_thermal"
-        },
-        {
-            "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
-            "items": [
-                {
-                    "description": "Zone 'GND_F' [GND] on F.Cu, priority 0",
-                    "pos": {
-                        "x": 100.0,
-                        "y": 60.0
-                    },
-                    "uuid": "cf0aa06f-4153-439b-9e36-a698afd49e1b"
-                },
-                {
-                    "description": "Pad 2 [GND] of R102 on F.Cu",
-                    "pos": {
-                        "x": 126.98,
-                        "y": 134.35
-                    },
-                    "uuid": "ec7a3687-ca87-44b4-98b6-aab99f679925"
                 }
             ],
             "severity": "error",

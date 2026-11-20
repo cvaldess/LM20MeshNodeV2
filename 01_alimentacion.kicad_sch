@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "nRF54LM20-MeshNode")
-		(date "2026-11-09")
-		(rev "0.1")
+		(date "2026-11-20")
+		(rev "0.2")
 		(company "CValdesS.com")
 	)
 	(lib_symbols

@@ -18,6 +18,13 @@ __pycache__/
 
 # Third-party datasheets and vendor archives (not redistributed)
 datasheets/
+minewsemi/
+minewsemi.zip
+
+# Minew 3D models (MS21SF1, ME31GR02): not published until Minew authorizes it.
+# Once authorized: delete these two lines, then git add the two files and push.
+libs/meshnode.3dshapes/MS21SF1_PCB_V1.0.step
+libs/meshnode.3dshapes/GNSS_MODULE_1010.step
 
 # Downloaded 3D model of a different module (ME54BS01), not used by the design
 libs/meshnode.3dshapes/ME54BS01-1Y15TI--3DModel-STEP-381242.STEP

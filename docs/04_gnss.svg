@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1000" viewBox="0 0 1720 1000" font-family="Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1040" viewBox="0 0 1720 1040" font-family="Segoe UI, Arial, sans-serif">
 <defs><style>
  .frame { fill:#fbfcfe; stroke:#90a4ae; stroke-width:1.3; }
  .framep { fill:#fffaf0; stroke:#b7791f; stroke-width:1.5; stroke-dasharray:6 4; }
@@ -46,9 +46,9 @@
  .td { font-size:11px; fill:#263238; }
  .tdm { font-size:11px; fill:#263238; font-family:Consolas, monospace; }
 </style></defs>
-<rect width="1720" height="1000" fill="#ffffff"/>
-<text x="24" y="36" class="h1" text-anchor="start" >04 · GNSS — E108-GN04S (BDS/GPS/GLONASS/Galileo)</text>
-<text x="24" y="56" class="h2" text-anchor="start" >nrf54lm20-meshnode · hoja 4 · referencias 4xx · intención de 04_gnss.kicad_sch</text>
+<rect width="1720" height="1040" fill="#ffffff"/>
+<text x="24" y="36" class="h1" text-anchor="start" >04 · GNSS — MinewSemi ME31GR02 (L1, 4 constelaciones)</text>
+<text x="24" y="56" class="h2" text-anchor="start" >nrf54lm20-meshnode rev 0.2 · hoja 4 · referencias 4xx · intención de 04_gnss.kicad_sch</text>
 <rect x="760" y="31" width="34.2" height="18" rx="3" class="lab_p"/>
 <text x="777.1" y="44.5" class="lp" text-anchor="middle" >3V3</text>
 <text x="806" y="44" class="ts" text-anchor="start" >alimentación global</text>
@@ -63,82 +63,64 @@
 <rect x="1465" y="31" width="34" height="18" rx="3" class="symp"/>
 <text x="1505" y="44" class="ts" text-anchor="start" >pendiente de confirmar</text>
 <rect x="20" y="76" width="860" height="610" rx="7" class="frame"/>
-<text x="32" y="96" class="ft" text-anchor="start" >A · U401 E108-GN04S</text>
-<rect x="360" y="150" width="180" height="404" rx="3" class="sym"/>
+<text x="32" y="96" class="ft" text-anchor="start" >A · U401 ME31GR02 — Beken BK1661, LCC-18 10,5 × 9,7 (pinout tipo u-blox MAX)</text>
+<rect x="360" y="150" width="180" height="326" rx="3" class="sym"/>
 <text x="450.0" y="128" class="icref" text-anchor="middle" >U401</text>
-<text x="450.0" y="142" class="val" text-anchor="middle" >E108-GN04S · Ebyte</text>
+<text x="450.0" y="142" class="val" text-anchor="middle" >ME31GR02 · MinewSemi</text>
 <path d="M340,170 L360,170" class="w"/>
-<text x="356" y="166" class="pn" text-anchor="end" >23</text>
+<text x="356" y="166" class="pn" text-anchor="end" >8</text>
 <text x="366" y="174" class="pname" text-anchor="start" >VCC</text>
 <path d="M340,196 L360,196" class="w"/>
-<text x="356" y="192" class="pn" text-anchor="end" >22</text>
+<text x="356" y="192" class="pn" text-anchor="end" >6</text>
 <text x="366" y="200" class="pname" text-anchor="start" >V_BCKP</text>
 <path d="M340,248 L360,248" class="w"/>
-<text x="356" y="244" class="pn" text-anchor="end" >21</text>
+<text x="356" y="244" class="pn" text-anchor="end" >3</text>
 <text x="366" y="252" class="pname" text-anchor="start" >RXD</text>
 <path d="M340,274 L360,274" class="w"/>
-<text x="356" y="270" class="pn" text-anchor="end" >20</text>
+<text x="356" y="270" class="pn" text-anchor="end" >2</text>
 <text x="366" y="278" class="pname" text-anchor="start" >TXD</text>
 <path d="M340,326 L360,326" class="w"/>
-<text x="356" y="322" class="pn" text-anchor="end" >8</text>
-<text x="366" y="330" class="pname" text-anchor="start" >RESET_N</text>
+<text x="356" y="322" class="pn" text-anchor="end" >9</text>
+<text x="366" y="330" class="pname" text-anchor="start" >RESET</text>
 <path d="M340,352 L360,352" class="w"/>
-<text x="356" y="348" class="pn" text-anchor="end" >2</text>
-<text x="366" y="356" class="pname" text-anchor="start" >SAFEBOOT_N</text>
-<path d="M340,378 L360,378" class="w"/>
-<text x="356" y="374" class="pn" text-anchor="end" >4</text>
-<text x="366" y="382" class="pname" text-anchor="start" >EXTINT</text>
+<text x="356" y="348" class="pn" text-anchor="end" >4</text>
+<text x="366" y="356" class="pname" text-anchor="start" >PPS</text>
 <path d="M340,404 L360,404" class="w"/>
-<text x="356" y="400" class="pn" text-anchor="end" >3</text>
-<text x="366" y="408" class="pname" text-anchor="start" >1PPS</text>
+<text x="356" y="400" class="pn" text-anchor="end" >1</text>
+<text x="366" y="408" class="pname" text-anchor="start" >GND</text>
+<path d="M340,430 L360,430" class="w"/>
+<text x="356" y="426" class="pn" text-anchor="end" >10</text>
+<text x="366" y="434" class="pname" text-anchor="start" >GND</text>
 <path d="M340,456 L360,456" class="w"/>
-<text x="356" y="452" class="pn" text-anchor="end" >10</text>
+<text x="356" y="452" class="pn" text-anchor="end" >12</text>
 <text x="366" y="460" class="pname" text-anchor="start" >GND</text>
-<path d="M340,482 L360,482" class="w"/>
-<text x="356" y="478" class="pn" text-anchor="end" >12</text>
-<text x="366" y="486" class="pname" text-anchor="start" >GND</text>
-<path d="M340,508 L360,508" class="w"/>
-<text x="356" y="504" class="pn" text-anchor="end" >13</text>
-<text x="366" y="512" class="pname" text-anchor="start" >GND</text>
-<path d="M340,534 L360,534" class="w"/>
-<text x="356" y="530" class="pn" text-anchor="end" >24</text>
-<text x="366" y="538" class="pname" text-anchor="start" >GND</text>
 <path d="M540,170 L560,170" class="w"/>
 <text x="544" y="166" class="pn" text-anchor="start" >11</text>
 <text x="534" y="174" class="pname" text-anchor="end" >RF_IN</text>
 <path d="M540,196 L560,196" class="w"/>
-<text x="544" y="192" class="pn" text-anchor="start" >9</text>
+<text x="544" y="192" class="pn" text-anchor="start" >14</text>
 <text x="534" y="200" class="pname" text-anchor="end" >VCC_RF</text>
-<path d="M540,222 L560,222" class="w"/>
-<text x="544" y="218" class="pn" text-anchor="start" >14</text>
-<text x="534" y="226" class="pname" text-anchor="end" >LNA_EN</text>
+<path d="M540,248 L560,248" class="w"/>
+<text x="544" y="244" class="pn" text-anchor="start" >5</text>
+<text x="534" y="252" class="pname" text-anchor="end" >NC</text>
 <path d="M540,274 L560,274" class="w"/>
-<text x="544" y="270" class="pn" text-anchor="start" >1</text>
+<text x="544" y="270" class="pn" text-anchor="start" >7</text>
 <text x="534" y="278" class="pname" text-anchor="end" >NC</text>
 <path d="M540,300 L560,300" class="w"/>
-<text x="544" y="296" class="pn" text-anchor="start" >5</text>
+<text x="544" y="296" class="pn" text-anchor="start" >13</text>
 <text x="534" y="304" class="pname" text-anchor="end" >NC</text>
 <path d="M540,326 L560,326" class="w"/>
-<text x="544" y="322" class="pn" text-anchor="start" >6</text>
+<text x="544" y="322" class="pn" text-anchor="start" >15</text>
 <text x="534" y="330" class="pname" text-anchor="end" >NC</text>
 <path d="M540,352 L560,352" class="w"/>
-<text x="544" y="348" class="pn" text-anchor="start" >7</text>
+<text x="544" y="348" class="pn" text-anchor="start" >16</text>
 <text x="534" y="356" class="pname" text-anchor="end" >NC</text>
 <path d="M540,378 L560,378" class="w"/>
-<text x="544" y="374" class="pn" text-anchor="start" >15</text>
+<text x="544" y="374" class="pn" text-anchor="start" >17</text>
 <text x="534" y="382" class="pname" text-anchor="end" >NC</text>
 <path d="M540,404 L560,404" class="w"/>
-<text x="544" y="400" class="pn" text-anchor="start" >16</text>
+<text x="544" y="400" class="pn" text-anchor="start" >18</text>
 <text x="534" y="408" class="pname" text-anchor="end" >NC</text>
-<path d="M540,430 L560,430" class="w"/>
-<text x="544" y="426" class="pn" text-anchor="start" >17</text>
-<text x="534" y="434" class="pname" text-anchor="end" >NC</text>
-<path d="M540,456 L560,456" class="w"/>
-<text x="544" y="452" class="pn" text-anchor="start" >18</text>
-<text x="534" y="460" class="pname" text-anchor="end" >NC</text>
-<path d="M540,482 L560,482" class="w"/>
-<text x="544" y="478" class="pn" text-anchor="start" >19</text>
-<text x="534" y="486" class="pname" text-anchor="end" >NC</text>
 <rect x="283.6" y="161" width="56.400000000000006" height="18" rx="3" class="lab_p"/>
 <text x="311.8" y="174.5" class="lp" text-anchor="middle" >V_GNSS</text>
 <rect x="283.6" y="187" width="56.400000000000006" height="18" rx="3" class="lab_l"/>
@@ -147,40 +129,31 @@
 <text x="304.40000000000003" y="252.5" class="ll" text-anchor="middle" >GNSS_RXD</text>
 <rect x="268.8" y="265" width="71.2" height="18" rx="3" class="lab_l"/>
 <text x="304.40000000000003" y="278.5" class="ll" text-anchor="middle" >GNSS_TXD</text>
-<rect x="268.8" y="317" width="71.2" height="18" rx="3" class="lab_s"/>
-<text x="304.40000000000003" y="330.5" class="lsb" text-anchor="middle" >GNSS_RST</text>
-<rect x="268.8" y="343" width="71.2" height="18" rx="3" class="lab_l"/>
-<text x="304.40000000000003" y="356.5" class="ll" text-anchor="middle" >SAFEBOOT</text>
-<path d="M335,373 L345,383" class="nc"/>
-<path d="M335,383 L345,373" class="nc"/>
-<rect x="268.8" y="395" width="71.2" height="18" rx="3" class="lab_s"/>
-<text x="304.40000000000003" y="408.5" class="lsb" text-anchor="middle" >GNSS_PPS</text>
+<rect x="254.0" y="317" width="86.0" height="18" rx="3" class="lab_l"/>
+<text x="297.0" y="330.5" class="ll" text-anchor="middle" >GNSS_RESET</text>
+<rect x="268.8" y="343" width="71.2" height="18" rx="3" class="lab_s"/>
+<text x="304.40000000000003" y="356.5" class="lsb" text-anchor="middle" >GNSS_PPS</text>
+<path d="M340,404 L330,404" class="w"/>
+<path d="M330,404 L330,411" class="w"/>
+<path d="M321,411 L339,411" class="w"/>
+<path d="M324,415 L336,415" class="w"/>
+<path d="M327,419 L333,419" class="w"/>
+<path d="M340,430 L330,430" class="w"/>
+<path d="M330,430 L330,437" class="w"/>
+<path d="M321,437 L339,437" class="w"/>
+<path d="M324,441 L336,441" class="w"/>
+<path d="M327,445 L333,445" class="w"/>
 <path d="M340,456 L330,456" class="w"/>
 <path d="M330,456 L330,463" class="w"/>
 <path d="M321,463 L339,463" class="w"/>
 <path d="M324,467 L336,467" class="w"/>
 <path d="M327,471 L333,471" class="w"/>
-<path d="M340,482 L330,482" class="w"/>
-<path d="M330,482 L330,489" class="w"/>
-<path d="M321,489 L339,489" class="w"/>
-<path d="M324,493 L336,493" class="w"/>
-<path d="M327,497 L333,497" class="w"/>
-<path d="M340,508 L330,508" class="w"/>
-<path d="M330,508 L330,515" class="w"/>
-<path d="M321,515 L339,515" class="w"/>
-<path d="M324,519 L336,519" class="w"/>
-<path d="M327,523 L333,523" class="w"/>
-<path d="M340,534 L330,534" class="w"/>
-<path d="M330,534 L330,541" class="w"/>
-<path d="M321,541 L339,541" class="w"/>
-<path d="M324,545 L336,545" class="w"/>
-<path d="M327,549 L333,549" class="w"/>
 <rect x="560" y="161" width="78.60000000000001" height="18" rx="3" class="lab_l"/>
 <text x="599.3" y="174.5" class="ll" text-anchor="middle" >GNSS_RFIN</text>
 <rect x="560" y="187" width="56.400000000000006" height="18" rx="3" class="lab_l"/>
 <text x="588.2" y="200.5" class="ll" text-anchor="middle" >VCC_RF</text>
-<path d="M555,217 L565,227" class="nc"/>
-<path d="M555,227 L565,217" class="nc"/>
+<path d="M555,243 L565,253" class="nc"/>
+<path d="M555,253 L565,243" class="nc"/>
 <path d="M555,269 L565,279" class="nc"/>
 <path d="M555,279 L565,269" class="nc"/>
 <path d="M555,295 L565,305" class="nc"/>
@@ -193,19 +166,17 @@
 <path d="M555,383 L565,373" class="nc"/>
 <path d="M555,399 L565,409" class="nc"/>
 <path d="M555,409 L565,399" class="nc"/>
-<path d="M555,425 L565,435" class="nc"/>
-<path d="M555,435 L565,425" class="nc"/>
-<path d="M555,451 L565,461" class="nc"/>
-<path d="M555,461 L565,451" class="nc"/>
-<path d="M555,477 L565,487" class="nc"/>
-<path d="M555,487 L565,477" class="nc"/>
-<text x="40" y="590" class="ts" text-anchor="start" >Consumo 25–27 mA (§2.3) y SIN modo sleep documentado ⇒ se le corta VCC: V_GNSS = BUCK1 del nPM1300.</text>
-<text x="40" y="609" class="ts" text-anchor="start" >V_BCKP desde 3V3 (siempre vivo): mantiene RTC y efemérides con VCC cortado ⇒ arranque en caliente (~1 s).</text>
-<text x="40" y="628" class="ts" text-anchor="start" >RESET_N: pull-up interno, «dejar al aire si no se usa» ⇒ el MCU sólo lo baja (drenador abierto).</text>
-<text x="40" y="647" class="ts" text-anchor="start" >EXTINT y LNA_EN sin uso (al aire, §3.2). SAFEBOOT_N a un punto de prueba (recuperación de firmware).</text>
-<text x="40" y="666" class="ts" text-anchor="start" >UART 38400 baudios por defecto, NMEA 4.11 / UBX.</text>
+<text x="40" y="512" class="ts" text-anchor="start" >UART 115200 por defecto, NMEA 4.1 (§5.5). Consumo (§3.3): 19 mA captura · 17,5 mA seguimiento.</text>
+<text x="40" y="531" class="ts" text-anchor="start" >V_BCKP (2,5–3,6 V, 12 µA): pila BT401 cargada desde 3V3 (marco D) ⇒ RTC + efemérides vivos también</text>
+<text x="40" y="550" class="ts" text-anchor="start" >con la placa apagada (ship mode o LiPo agotada) ⇒ arranque en caliente (~1 s) al volver a encender.</text>
+<text x="40" y="569" class="ts" text-anchor="start" >RESET: pull-up interno (Minew 20-11) ⇒ al aire; R405 0 Ω DNP a GNSS_RST (P1.00) por si hiciera falta.</text>
+<text x="40" y="588" class="ts" text-anchor="start" >PPS a 3,3 V directo a GNSS_PPS (P1.04). NC 5, 7, 13, 15–18 al aire (§4.1). Sin SAFEBOOT: actualiza por UART.</text>
+<text x="40" y="607" class="tw" text-anchor="start" >Meshtastic no lo reconoce: hace falta sonda nueva en GPS.cpp ($POLCFGPTVER → $POLRS; al arrancar</text>
+<text x="40" y="626" class="tw" text-anchor="start" >saca $POLRS o $BKCHIP). Comandos $POLCFG… en datasheets/BK166X_Series_Interface_Description.</text>
+<text x="40" y="645" class="ts" text-anchor="start" >Frente a la rev 0.1 (E108-GN04S): fuera C404 56 pF en serie y TP401 SAFEBOOT; L401 82 → 47 nH; C404 = 47 pF</text>
+<text x="40" y="664" class="ts" text-anchor="start" >de VCC_RF a GND; nuevos R405 (RESET), TP401/TP402 (UART) y pila de respaldo BT401 + D401.</text>
 <rect x="900" y="76" width="800" height="330" rx="7" class="frame"/>
-<text x="912" y="96" class="ft" text-anchor="start" >B · UART, backup y puntos de prueba</text>
+<text x="912" y="96" class="ft" text-anchor="start" >B · UART, reset y puntos de prueba</text>
 <rect x="926.2" y="131" width="63.800000000000004" height="18" rx="3" class="lab_s"/>
 <text x="958.1" y="144.5" class="lsb" text-anchor="middle" >GNSS_TX</text>
 <path d="M990,140 L1017.0,140" class="w"/>
@@ -214,44 +185,37 @@
 <text x="1030.0" y="131" class="ref" text-anchor="middle" >R402 1 kΩ</text>
 <rect x="1070" y="131" width="71.2" height="18" rx="3" class="lab_l"/>
 <text x="1105.6" y="144.5" class="ll" text-anchor="middle" >GNSS_RXD</text>
-<rect x="926.2" y="181" width="63.800000000000004" height="18" rx="3" class="lab_s"/>
-<text x="958.1" y="194.5" class="lsb" text-anchor="middle" >GNSS_RX</text>
-<path d="M990,190 L1017.0,190" class="w"/>
-<path d="M1043.0,190 L1070,190" class="w"/>
-<rect x="1017.0" y="185" width="26" height="10" class="sym"/>
-<text x="1030.0" y="181" class="ref" text-anchor="middle" >R403 1 kΩ</text>
-<rect x="1070" y="181" width="71.2" height="18" rx="3" class="lab_l"/>
-<text x="1105.6" y="194.5" class="ll" text-anchor="middle" >GNSS_TXD</text>
-<rect x="1295.8" y="131" width="34.2" height="18" rx="3" class="lab_p"/>
-<text x="1312.8999999999999" y="144.5" class="lp" text-anchor="middle" >3V3</text>
-<path d="M1330,140 L1357.0,140" class="w"/>
-<path d="M1383.0,140 L1410,140" class="w"/>
-<rect x="1357.0" y="135" width="26" height="10" class="sym"/>
-<text x="1370.0" y="131" class="ref" text-anchor="middle" >R401 1 kΩ</text>
-<path d="M1410,140 L1450,140" class="w"/>
-<circle cx="1450" cy="140" r="3.2" fill="#263238"/>
-<rect x="1470" y="131" width="56.400000000000006" height="18" rx="3" class="lab_l"/>
-<text x="1498.2" y="144.5" class="ll" text-anchor="middle" >V_BCKP</text>
-<path d="M1450,140 L1470,140" class="w"/>
-<path d="M1450,140 L1450,157.0" class="w"/>
-<path d="M1450,163.0 L1450,180" class="w"/>
-<path d="M1441,157.0 L1459,157.0" class="plate"/>
-<path d="M1441,163.0 L1459,163.0" class="plate"/>
-<text x="1438" y="158.0" class="ref" text-anchor="end" >C403</text>
-<text x="1438" y="171.0" class="val" text-anchor="end" >100 nF</text>
-<path d="M1450,180 L1450,187" class="w"/>
-<path d="M1441,187 L1459,187" class="w"/>
-<path d="M1444,191 L1456,191" class="w"/>
-<path d="M1447,195 L1453,195" class="w"/>
-<circle cx="1000" cy="250" r="5" fill="#fff" stroke="#263238" stroke-width="1.6"/>
-<text x="1009" y="254" class="ref" text-anchor="start" >TP401</text>
-<rect x="1050" y="241" width="71.2" height="18" rx="3" class="lab_l"/>
-<text x="1085.6" y="254.5" class="ll" text-anchor="middle" >SAFEBOOT</text>
-<text x="920" y="300" class="ts" text-anchor="start" >R402/R403 1 kΩ: Ebyte pide resistencias de protección en la UART; además limitan la</text>
-<text x="920" y="315" class="ts" text-anchor="start" >corriente que entra por RXD con el GNSS apagado (el firmware deja TX en baja/entrada).</text>
-<text x="920" y="330" class="ts" text-anchor="start" >R401: V_BCKP «también puede cargar una pila» ⇒ 1 kΩ limita cualquier conflicto (15 µA ⇒ 15 mV).</text>
+<rect x="926.2" y="176" width="63.800000000000004" height="18" rx="3" class="lab_s"/>
+<text x="958.1" y="189.5" class="lsb" text-anchor="middle" >GNSS_RX</text>
+<path d="M990,185 L1017.0,185" class="w"/>
+<path d="M1043.0,185 L1070,185" class="w"/>
+<rect x="1017.0" y="180" width="26" height="10" class="sym"/>
+<text x="1030.0" y="176" class="ref" text-anchor="middle" >R403 1 kΩ</text>
+<rect x="1070" y="176" width="71.2" height="18" rx="3" class="lab_l"/>
+<text x="1105.6" y="189.5" class="ll" text-anchor="middle" >GNSS_TXD</text>
+<rect x="918.8" y="221" width="71.2" height="18" rx="3" class="lab_s"/>
+<text x="954.4" y="234.5" class="lsb" text-anchor="middle" >GNSS_RST</text>
+<path d="M990,230 L1017.0,230" class="w"/>
+<path d="M1043.0,230 L1070,230" class="w"/>
+<rect x="1017.0" y="225" width="26" height="10" class="dnp"/>
+<text x="1030.0" y="221" class="ref" text-anchor="middle" >R405 0 Ω DNP</text>
+<rect x="1070" y="221" width="86.0" height="18" rx="3" class="lab_l"/>
+<text x="1113.0" y="234.5" class="ll" text-anchor="middle" >GNSS_RESET</text>
+<circle cx="1340" cy="140" r="5" fill="#fff" stroke="#263238" stroke-width="1.6"/>
+<text x="1349" y="144" class="ref" text-anchor="start" >TP401</text>
+<rect x="1400" y="131" width="71.2" height="18" rx="3" class="lab_l"/>
+<text x="1435.6" y="144.5" class="ll" text-anchor="middle" >GNSS_TXD</text>
+<circle cx="1340" cy="185" r="5" fill="#fff" stroke="#263238" stroke-width="1.6"/>
+<text x="1349" y="189" class="ref" text-anchor="start" >TP402</text>
+<rect x="1400" y="176" width="71.2" height="18" rx="3" class="lab_l"/>
+<text x="1435.6" y="189.5" class="ll" text-anchor="middle" >GNSS_RXD</text>
+<text x="920" y="300" class="ts" text-anchor="start" >R402/R403 1 kΩ en serie (Minew pone 100 Ω): además limitan lo que entra por RXD con el GNSS apagado.</text>
+<text x="920" y="319" class="tw" text-anchor="start" >§2.9/§5.5: con VCC cortado ninguna línea en alto ⇒ FIRMWARE: al apagar, TX del MCU en entrada + pull-down.</text>
+<text x="920" y="338" class="ts" text-anchor="start" >R405 sin montar: RESET queda con su pull-up y el MCU no puede dejarlo en alto con el GNSS apagado.</text>
+<text x="920" y="357" class="ts" text-anchor="start" >TP401/TP402: la UART del GNSS a mano para probar los $POLCFG… o actualizar su firmware (con el nRF en reset).</text>
+<text x="920" y="376" class="ts" text-anchor="start" >Con BT401 el GNSS está en backup aunque la placa esté apagada: tampoco entonces se le mete nada por la UART.</text>
 <rect x="900" y="420" width="800" height="266" rx="7" class="frame"/>
-<text x="912" y="440" class="ft" text-anchor="start" >C · Antena 1575 MHz por U.FL — activa o pasiva</text>
+<text x="912" y="440" class="ft" text-anchor="start" >C · Antena 1575 MHz por U.FL — activa o pasiva (Minew §5.1)</text>
 <rect x="940" y="500" width="110" height="88" rx="3" class="sym"/>
 <text x="995.0" y="478" class="icref" text-anchor="middle" >J401</text>
 <text x="995.0" y="492" class="val" text-anchor="middle" >BWU.FL-IPEX1</text>
@@ -274,30 +238,40 @@
 <path d="M1071,575 L1089,575" class="w"/>
 <path d="M1074,579 L1086,579" class="w"/>
 <path d="M1077,583 L1083,583" class="w"/>
-<path d="M1070,520 L1180,520" class="rf"/>
-<circle cx="1180" cy="520" r="3.2" fill="#263238"/>
-<path d="M1180,520 L1222.0,520" class="w"/>
-<path d="M1228.0,520 L1270,520" class="w"/>
-<path d="M1222.0,511 L1222.0,529" class="plate"/>
-<path d="M1228.0,511 L1228.0,529" class="plate"/>
-<text x="1225.0" y="507" class="ref" text-anchor="middle" >C404 56 pF C0G</text>
-<path d="M1270,520 L1330,520" class="rf"/>
-<rect x="1330" y="511" width="78.60000000000001" height="18" rx="3" class="lab_l"/>
-<text x="1369.3" y="524.5" class="ll" text-anchor="middle" >GNSS_RFIN</text>
-<path d="M1180,520 L1180,540" class="w"/>
-<g opacity="0.75">
-<path d="M1180,540 L1180,549" class="w"/>
-<path d="M1180,591 L1180,600" class="w"/>
-<path d="M1180,549 a5.25,5.25 0 0 1 0,10.5 a5.25,5.25 0 0 1 0,10.5 a5.25,5.25 0 0 1 0,10.5 a5.25,5.25 0 0 1 0,10.5" class="w"/>
-<text x="1192" y="568.0" class="ref" text-anchor="start" >L401</text>
-<text x="1192" y="581.0" class="val" text-anchor="start" >82 nH (sólo activa)</text>
-</g>
-<rect x="1151.8" y="611" width="56.400000000000006" height="18" rx="3" class="lab_l"/>
-<text x="1180.0" y="624.5" class="ll" text-anchor="middle" >VCC_RF</text>
-<text x="920" y="656" class="ts" text-anchor="start" >Pasiva: sólo C404 (DC block). Activa: montar L401 ⇒ la antena recibe VCC_RF (= V_GNSS, 3,3 V)</text>
-<text x="920" y="671" class="ts" text-anchor="start" >por el coaxial; el módulo detecta y protege la antena activa. 50 Ω en coplanar, corto.</text>
-<rect x="20" y="700" width="860" height="250" rx="7" class="frame"/>
-<text x="32" y="720" class="ft" text-anchor="start" >D · Alimentación del GNSS</text>
+<path d="M1070,520 L1300,520" class="rf"/>
+<circle cx="1200" cy="520" r="3.2" fill="#263238"/>
+<rect x="1300" y="511" width="78.60000000000001" height="18" rx="3" class="lab_l"/>
+<text x="1339.3" y="524.5" class="ll" text-anchor="middle" >GNSS_RFIN</text>
+<path d="M1200,520 L1200,532" class="w"/>
+<path d="M1200,532 L1200,541" class="w"/>
+<path d="M1200,583 L1200,592" class="w"/>
+<path d="M1200,541 a5.25,5.25 0 0 1 0,10.5 a5.25,5.25 0 0 1 0,10.5 a5.25,5.25 0 0 1 0,10.5 a5.25,5.25 0 0 1 0,10.5" class="w"/>
+<text x="1212" y="560.0" class="ref" text-anchor="start" >L401</text>
+<text x="1212" y="573.0" class="val" text-anchor="start" >47 nH (activa)</text>
+<circle cx="1200" cy="592" r="3.2" fill="#263238"/>
+<path d="M1200,592 L1250,592" class="w"/>
+<path d="M1250,592 L1250,609.0" class="w"/>
+<path d="M1250,615.0 L1250,632" class="w"/>
+<path d="M1241,609.0 L1259,609.0" class="plate"/>
+<path d="M1241,615.0 L1259,615.0" class="plate"/>
+<text x="1262" y="610.0" class="ref" text-anchor="start" >C404</text>
+<text x="1262" y="623.0" class="val" text-anchor="start" >47 pF C0G</text>
+<path d="M1250,632 L1250,639" class="w"/>
+<path d="M1241,639 L1259,639" class="w"/>
+<path d="M1244,643 L1256,643" class="w"/>
+<path d="M1247,647 L1253,647" class="w"/>
+<path d="M1180,592 L1200,592" class="w"/>
+<rect x="1123.6" y="583" width="56.400000000000006" height="18" rx="3" class="lab_l"/>
+<text x="1151.8" y="596.5" class="ll" text-anchor="middle" >VCC_RF</text>
+<text x="1320" y="556" class="ts" text-anchor="start" >L401 desde VCC_RF (3,3 V) alimenta una antena</text>
+<text x="1320" y="573" class="ts" text-anchor="start" >activa por el coaxial; C404 desacopla VCC_RF.</text>
+<text x="1320" y="590" class="ts" text-anchor="start" >Sin condensador serie: como la referencia,</text>
+<text x="1320" y="607" class="ts" text-anchor="start" >la polarización entra por RF_IN.</text>
+<text x="1320" y="624" class="ts" text-anchor="start" >Pasiva: L401 no estorba si la antena no</text>
+<text x="1320" y="641" class="ts" text-anchor="start" >está en corto en DC. Activa: G &lt; 25 dB, NF &lt; 1,5.</text>
+<text x="920" y="668" class="ts" text-anchor="start" >Pista 50 Ω coplanar de RF_IN al U.FL, corta, referida a In1 (GND) como en la rev 0.1 (§5.2).</text>
+<rect x="20" y="700" width="860" height="330" rx="7" class="frame"/>
+<text x="32" y="720" class="ft" text-anchor="start" >D · Alimentación del GNSS y pila de respaldo de V_BCKP</text>
 <rect x="63.599999999999994" y="751" width="56.400000000000006" height="18" rx="3" class="lab_p"/>
 <text x="91.8" y="764.5" class="lp" text-anchor="middle" >V_GNSS</text>
 <path d="M120,760 L230,760" class="w"/>
@@ -330,74 +304,134 @@
 <text x="540.0" y="751" class="ref" text-anchor="middle" >R404 0 Ω DNP</text>
 <rect x="580" y="751" width="56.400000000000006" height="18" rx="3" class="lab_p"/>
 <text x="608.2" y="764.5" class="lp" text-anchor="middle" >V_GNSS</text>
-<text x="40" y="860" class="ts" text-anchor="start" >Rizado &lt; 50 mV (§5): V_GNSS sale de su propio buck, separado de los picos de TX del E22.</text>
-<text x="40" y="879" class="ts" text-anchor="start" >R404 sin montar: rectificación si BUCK1 diera guerra (GNSS siempre encendido desde 3V3).</text>
-<text x="40" y="898" class="tw" text-anchor="start" >🚨 Con R404 montada, BUCK1 debe quedar APAGADO (dos fuentes unidas).</text>
-<rect x="900" y="700" width="800" height="290" rx="7" class="frame"/>
+<rect x="65.8" y="841" width="34.2" height="18" rx="3" class="lab_p"/>
+<text x="82.9" y="854.5" class="lp" text-anchor="middle" >3V3</text>
+<path d="M100,850 L128.0,850" class="w"/>
+<path d="M142.0,850 L170,850" class="w"/>
+<path d="M128.0,842 L128.0,858 L142.0,850 Z" class="sym"/>
+<path d="M142.0,842 L142.0,858" class="plate"/>
+<text x="135.0" y="837" class="ref" text-anchor="middle" >D401 BAT54WS</text>
+<path d="M170,850 L190,850" class="w"/>
+<path d="M190,850 L217.0,850" class="w"/>
+<path d="M243.0,850 L270,850" class="w"/>
+<rect x="217.0" y="845" width="26" height="10" class="sym"/>
+<text x="230.0" y="841" class="ref" text-anchor="middle" >R401 1 kΩ</text>
+<path d="M270,850 L440,850" class="w"/>
+<circle cx="320" cy="850" r="3.2" fill="#263238"/>
+<circle cx="400" cy="850" r="3.2" fill="#263238"/>
+<path d="M320,850 L320,871.0" class="w"/>
+<path d="M320,877.0 L320,898" class="w"/>
+<path d="M309,871.0 L331,871.0" class="w"/>
+<path d="M314,877.0 L326,877.0" class="plate"/>
+<text x="328" y="867.0" class="pn" text-anchor="start" >+</text>
+<text x="305" y="872.0" class="ref" text-anchor="end" >BT401</text>
+<text x="305" y="885.0" class="val" text-anchor="end" >MS621FE-FL11E</text>
+<path d="M320,898 L320,905" class="w"/>
+<path d="M311,905 L329,905" class="w"/>
+<path d="M314,909 L326,909" class="w"/>
+<path d="M317,913 L323,913" class="w"/>
+<path d="M400,850 L400,867.0" class="w"/>
+<path d="M400,873.0 L400,890" class="w"/>
+<path d="M391,867.0 L409,867.0" class="plate"/>
+<path d="M391,873.0 L409,873.0" class="plate"/>
+<text x="412" y="868.0" class="ref" text-anchor="start" >C403</text>
+<text x="412" y="881.0" class="val" text-anchor="start" >100 nF</text>
+<path d="M400,890 L400,897" class="w"/>
+<path d="M391,897 L409,897" class="w"/>
+<path d="M394,901 L406,901" class="w"/>
+<path d="M397,905 L403,905" class="w"/>
+<rect x="440" y="841" width="56.400000000000006" height="18" rx="3" class="lab_l"/>
+<text x="468.2" y="854.5" class="ll" text-anchor="middle" >V_BCKP</text>
+<text x="520" y="822" class="ts" text-anchor="start" >BT401: Li-Mn recargable 3 V, 5,5 mAh, Ø 6,8 × 2,1 mm.</text>
+<text x="520" y="839" class="ts" text-anchor="start" >Carga 2,8–3,3 V (3,1 recomendada): 3V3 − BAT54 ≈ 3,15 V;</text>
+<text x="520" y="856" class="ts" text-anchor="start" >R401 limita a ≤ 3 mA con la pila a 0 V (Seiko: máx. 10).</text>
+<text x="520" y="873" class="ts" text-anchor="start" >D401 impide que la pila alimente el 3V3 apagado (fuga</text>
+<text x="520" y="890" class="ts" text-anchor="start" >&lt; 1 µA a 3 V). Sin BT401 funciona igual que la rev 0.1.</text>
+<text x="520" y="907" class="ts" text-anchor="start" >Autonomía estimada ≈ 1–2 semanas de RTC a 12 µA.</text>
+<text x="520" y="924" class="tw" text-anchor="start" >Sin reflujo: soldar a mano al final (≤ 5 s, pila &lt; 85 °C).</text>
+<text x="40" y="950" class="ts" text-anchor="start" >V_GNSS = BUCK1 del nPM1300 (200 mA, sólo para el GNSS), conmutado con PIN_GPS_EN (GNSS_EN): lejos de los</text>
+<text x="40" y="969" class="ts" text-anchor="start" >picos de TX del MS21SF1. Minew §5.3 pide fuente limpia &gt; 100 mA. C401/C402 junto a la pata 8, C403 junto a la 6.</text>
+<text x="40" y="988" class="ts" text-anchor="start" >R404 sin montar: GNSS siempre encendido desde 3V3 si BUCK1 diera guerra (dormiría por comando).</text>
+<text x="40" y="1007" class="tw" text-anchor="start" >🚨 Con R404 montada, BUCK1 debe quedar APAGADO (dos fuentes unidas).</text>
+<rect x="900" y="700" width="800" height="330" rx="7" class="frame"/>
 <text x="912" y="720" class="ft" text-anchor="start" >Piezas de la hoja</text>
 <text x="920" y="740" class="th" text-anchor="start" >Ref.</text>
 <text x="1010" y="740" class="th" text-anchor="start" >Qué es</text>
-<text x="1140" y="740" class="th" text-anchor="start" >Pieza</text>
+<text x="1160" y="740" class="th" text-anchor="start" >Pieza</text>
 <text x="1350" y="740" class="th" text-anchor="start" >Encaps.</text>
 <text x="1450" y="740" class="th" text-anchor="start" >LCSC</text>
-<text x="1540" y="740" class="th" text-anchor="start" >Stock</text>
+<text x="1545" y="740" class="th" text-anchor="start" >Stock</text>
 <path d="M910,746 L1690,746" class="thin"/>
 <text x="920" y="764" class="tdm" text-anchor="start" >U401</text>
-<text x="1010" y="764" class="td" text-anchor="start" >GNSS multibanda</text>
-<text x="1140" y="764" class="td" text-anchor="start" >Ebyte E108-GN04S</text>
-<text x="1350" y="764" class="td" text-anchor="start" >SMD 12,2×16</text>
+<text x="1010" y="764" class="td" text-anchor="start" >GNSS L1 (4 constel.)</text>
+<text x="1160" y="764" class="td" text-anchor="start" >MinewSemi ME31GR02</text>
+<text x="1350" y="764" class="td" text-anchor="start" >LCC-18 10,5×9,7</text>
 <text x="1450" y="764" class="tdm" text-anchor="start" >—</text>
-<text x="1540" y="764" class="td" text-anchor="start" >cajón #196 (4)</text>
-<rect x="908" y="775" width="784" height="24" fill="#f1f5f9"/>
-<text x="920" y="788" class="tdm" text-anchor="start" >J401</text>
-<text x="1010" y="788" class="td" text-anchor="start" >conector antena</text>
-<text x="1140" y="788" class="td" text-anchor="start" >BWU.FL-IPEX1</text>
-<text x="1350" y="788" class="td" text-anchor="start" >SMD</text>
-<text x="1450" y="788" class="tdm" text-anchor="start" >C5137195</text>
-<text x="1540" y="788" class="td" text-anchor="start" >cajón #210</text>
-<text x="920" y="812" class="tdm" text-anchor="start" >C404</text>
-<text x="1010" y="812" class="td" text-anchor="start" >56 pF C0G</text>
-<text x="1140" y="812" class="td" text-anchor="start" >Samsung CL05C560JB5NNNC</text>
-<text x="1350" y="812" class="td" text-anchor="start" >0402</text>
-<text x="1450" y="812" class="tdm" text-anchor="start" >C84707</text>
-<text x="1540" y="812" class="td" text-anchor="start" >COMPRAR</text>
-<rect x="908" y="823" width="784" height="24" fill="#f1f5f9"/>
-<text x="920" y="836" class="tdm" text-anchor="start" >L401</text>
-<text x="1010" y="836" class="td" text-anchor="start" >82 nH (activa)</text>
-<text x="1140" y="836" class="td" text-anchor="start" >Murata LQG15HS82NJ02D</text>
-<text x="1350" y="836" class="td" text-anchor="start" >0402</text>
-<text x="1450" y="836" class="tdm" text-anchor="start" >C98002</text>
-<text x="1540" y="836" class="td" text-anchor="start" >COMPRAR</text>
-<text x="920" y="860" class="tdm" text-anchor="start" >R401-R403</text>
-<text x="1010" y="860" class="td" text-anchor="start" >1 kΩ 1 %</text>
-<text x="1140" y="860" class="td" text-anchor="start" >UNI-ROYAL 0402WGF1001TCE</text>
-<text x="1350" y="860" class="td" text-anchor="start" >0402</text>
-<text x="1450" y="860" class="tdm" text-anchor="start" >C11702</text>
-<text x="1540" y="860" class="td" text-anchor="start" >cajón #31</text>
-<rect x="908" y="871" width="784" height="24" fill="#f1f5f9"/>
-<text x="920" y="884" class="tdm" text-anchor="start" >R404</text>
-<text x="1010" y="884" class="td" text-anchor="start" >0 Ω (DNP)</text>
-<text x="1140" y="884" class="td" text-anchor="start" >—</text>
-<text x="1350" y="884" class="td" text-anchor="start" >0402</text>
-<text x="1450" y="884" class="tdm" text-anchor="start" >—</text>
-<text x="1540" y="884" class="td" text-anchor="start" >—</text>
-<text x="920" y="908" class="tdm" text-anchor="start" >C401</text>
-<text x="1010" y="908" class="td" text-anchor="start" >10 µF 10 V X7R</text>
-<text x="1140" y="908" class="td" text-anchor="start" >—</text>
-<text x="1350" y="908" class="td" text-anchor="start" >0603</text>
-<text x="1450" y="908" class="tdm" text-anchor="start" >—</text>
-<text x="1540" y="908" class="td" text-anchor="start" >cajón #147</text>
-<rect x="908" y="919" width="784" height="24" fill="#f1f5f9"/>
-<text x="920" y="932" class="tdm" text-anchor="start" >C402 C403</text>
-<text x="1010" y="932" class="td" text-anchor="start" >100 nF 16 V X7R</text>
-<text x="1140" y="932" class="td" text-anchor="start" >Samsung CL05B104KO5NNNC</text>
-<text x="1350" y="932" class="td" text-anchor="start" >0402</text>
-<text x="1450" y="932" class="tdm" text-anchor="start" >C1525</text>
-<text x="1540" y="932" class="td" text-anchor="start" >cajón #22</text>
-<text x="920" y="956" class="tdm" text-anchor="start" >TP401</text>
-<text x="1010" y="956" class="td" text-anchor="start" >punto de prueba</text>
-<text x="1140" y="956" class="td" text-anchor="start" >TestPoint_Pad_D1.0mm</text>
-<text x="1350" y="956" class="td" text-anchor="start" >Ø1 mm</text>
-<text x="1450" y="956" class="tdm" text-anchor="start" >—</text>
-<text x="1540" y="956" class="td" text-anchor="start" >—</text>
+<text x="1545" y="764" class="td" text-anchor="start" >patrocinio Minew</text>
+<rect x="908" y="774" width="784" height="23" fill="#f1f5f9"/>
+<text x="920" y="787" class="tdm" text-anchor="start" >J401</text>
+<text x="1010" y="787" class="td" text-anchor="start" >conector antena</text>
+<text x="1160" y="787" class="td" text-anchor="start" >BWU.FL-IPEX1</text>
+<text x="1350" y="787" class="td" text-anchor="start" >SMD</text>
+<text x="1450" y="787" class="tdm" text-anchor="start" >C5137195</text>
+<text x="1545" y="787" class="td" text-anchor="start" >cajón #210</text>
+<text x="920" y="810" class="tdm" text-anchor="start" >L401</text>
+<text x="1010" y="810" class="td" text-anchor="start" >47 nH (antena activa)</text>
+<text x="1160" y="810" class="td" text-anchor="start" >Murata LQW15AN47NJ00D</text>
+<text x="1350" y="810" class="td" text-anchor="start" >0402</text>
+<text x="1450" y="810" class="tdm" text-anchor="start" >C192855</text>
+<text x="1545" y="810" class="td" text-anchor="start" >cajón #207</text>
+<rect x="908" y="820" width="784" height="23" fill="#f1f5f9"/>
+<text x="920" y="833" class="tdm" text-anchor="start" >C404</text>
+<text x="1010" y="833" class="td" text-anchor="start" >47 pF C0G</text>
+<text x="1160" y="833" class="td" text-anchor="start" >FH 0402CG470F500NT</text>
+<text x="1350" y="833" class="td" text-anchor="start" >0402</text>
+<text x="1450" y="833" class="tdm" text-anchor="start" >C42563629</text>
+<text x="1545" y="833" class="td" text-anchor="start" >cajón #208</text>
+<text x="920" y="856" class="tdm" text-anchor="start" >BT401</text>
+<text x="1010" y="856" class="td" text-anchor="start" >pila recargable 3 V</text>
+<text x="1160" y="856" class="td" text-anchor="start" >Seiko MS621FE-FL11E</text>
+<text x="1350" y="856" class="td" text-anchor="start" >Ø6,8 tags</text>
+<text x="1450" y="856" class="tdm" text-anchor="start" >—</text>
+<text x="1545" y="856" class="td" text-anchor="start" >COMPRAR</text>
+<rect x="908" y="866" width="784" height="23" fill="#f1f5f9"/>
+<text x="920" y="879" class="tdm" text-anchor="start" >D401</text>
+<text x="1010" y="879" class="td" text-anchor="start" >Schottky baja fuga</text>
+<text x="1160" y="879" class="td" text-anchor="start" >Diodes BAT54WS-7-F</text>
+<text x="1350" y="879" class="td" text-anchor="start" >SOD-323</text>
+<text x="1450" y="879" class="tdm" text-anchor="start" >C124205</text>
+<text x="1545" y="879" class="td" text-anchor="start" >COMPRAR</text>
+<text x="920" y="902" class="tdm" text-anchor="start" >R401-R403</text>
+<text x="1010" y="902" class="td" text-anchor="start" >1 kΩ 1 %</text>
+<text x="1160" y="902" class="td" text-anchor="start" >UNI-ROYAL 0402WGF1001TCE</text>
+<text x="1350" y="902" class="td" text-anchor="start" >0402</text>
+<text x="1450" y="902" class="tdm" text-anchor="start" >C11702</text>
+<text x="1545" y="902" class="td" text-anchor="start" >cajón #31</text>
+<rect x="908" y="912" width="784" height="23" fill="#f1f5f9"/>
+<text x="920" y="925" class="tdm" text-anchor="start" >R404 R405</text>
+<text x="1010" y="925" class="td" text-anchor="start" >0 Ω (DNP)</text>
+<text x="1160" y="925" class="td" text-anchor="start" >—</text>
+<text x="1350" y="925" class="td" text-anchor="start" >0402</text>
+<text x="1450" y="925" class="tdm" text-anchor="start" >—</text>
+<text x="1545" y="925" class="td" text-anchor="start" >—</text>
+<text x="920" y="948" class="tdm" text-anchor="start" >C401</text>
+<text x="1010" y="948" class="td" text-anchor="start" >10 µF 10 V X7R</text>
+<text x="1160" y="948" class="td" text-anchor="start" >—</text>
+<text x="1350" y="948" class="td" text-anchor="start" >0603</text>
+<text x="1450" y="948" class="tdm" text-anchor="start" >—</text>
+<text x="1545" y="948" class="td" text-anchor="start" >cajón #147</text>
+<rect x="908" y="958" width="784" height="23" fill="#f1f5f9"/>
+<text x="920" y="971" class="tdm" text-anchor="start" >C402 C403</text>
+<text x="1010" y="971" class="td" text-anchor="start" >100 nF 16 V X7R</text>
+<text x="1160" y="971" class="td" text-anchor="start" >Samsung CL05B104KO5NNNC</text>
+<text x="1350" y="971" class="td" text-anchor="start" >0402</text>
+<text x="1450" y="971" class="tdm" text-anchor="start" >C1525</text>
+<text x="1545" y="971" class="td" text-anchor="start" >cajón #22</text>
+<text x="920" y="994" class="tdm" text-anchor="start" >TP401 TP402</text>
+<text x="1010" y="994" class="td" text-anchor="start" >punto de prueba</text>
+<text x="1160" y="994" class="td" text-anchor="start" >TestPoint_Pad_D1.0mm</text>
+<text x="1350" y="994" class="td" text-anchor="start" >Ø1 mm</text>
+<text x="1450" y="994" class="tdm" text-anchor="start" >—</text>
+<text x="1545" y="994" class="td" text-anchor="start" >—</text>
+<text x="920" y="1019" class="ts" text-anchor="start" >BT401: huella Battery:BatteryHolder_Seiko_MS621F (pad 1 = +, plano Seiko E65 FL11E).</text>
 </svg>

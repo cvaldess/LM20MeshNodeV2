@@ -48,7 +48,7 @@
 </style></defs>
 <rect width="1720" height="1340" fill="#ffffff"/>
 <text x="24" y="36" class="h1" text-anchor="start" >02 · MCU — ME54BS13 (nRF54LM20A)</text>
-<text x="24" y="56" class="h2" text-anchor="start" >nrf54lm20-meshnode · hoja 2 · referencias 2xx · intención de 02_mcu.kicad_sch · mapa de pines elegido por mí (revisar con las huellas en el PCB)</text>
+<text x="24" y="56" class="h2" text-anchor="start" >nrf54lm20-meshnode rev 0.2 · hoja 2 · referencias 2xx · intención de 02_mcu.kicad_sch · mapa de pines mío</text>
 <rect x="760" y="31" width="34.2" height="18" rx="3" class="lab_p"/>
 <text x="777.1" y="44.5" class="lp" text-anchor="middle" >3V3</text>
 <text x="806" y="44" class="ts" text-anchor="start" >alimentación global</text>
@@ -353,10 +353,10 @@
 <path d="M567,350.0 L577,340.0" class="nc"/>
 <path d="M567,358.5 L577,368.5" class="nc"/>
 <path d="M567,368.5 L577,358.5" class="nc"/>
-<rect x="572" y="373.0" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
-<text x="611.3" y="386.5" class="lsb" text-anchor="middle" >LORA_TXEN</text>
-<rect x="572" y="391.5" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
-<text x="611.3" y="405.0" class="lsb" text-anchor="middle" >LORA_RXEN</text>
+<path d="M567,377.0 L577,387.0" class="nc"/>
+<path d="M567,387.0 L577,377.0" class="nc"/>
+<path d="M567,395.5 L577,405.5" class="nc"/>
+<path d="M567,405.5 L577,395.5" class="nc"/>
 <path d="M567,414.0 L577,424.0" class="nc"/>
 <path d="M567,424.0 L577,414.0" class="nc"/>
 <rect x="572" y="428.5" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
@@ -619,96 +619,87 @@
 <text x="1060" y="808" class="tdm" text-anchor="start" >12</text>
 <text x="1110" y="808" class="td" text-anchor="start" >GPIO · castellado 12</text>
 <rect x="848" y="815" width="844" height="20" fill="#f1f5f9"/>
-<text x="860" y="828" class="tdm" text-anchor="start" >LORA_RXEN</text>
-<text x="990" y="828" class="tdm" text-anchor="start" >P1.13</text>
-<text x="1060" y="828" class="tdm" text-anchor="start" >F3</text>
-<text x="1110" y="828" class="td" text-anchor="start" >GPIO (RadioLib RXEN)</text>
-<text x="860" y="848" class="tdm" text-anchor="start" >LORA_TXEN</text>
-<text x="990" y="848" class="tdm" text-anchor="start" >P1.12</text>
-<text x="1060" y="848" class="tdm" text-anchor="start" >F4</text>
-<text x="1110" y="848" class="td" text-anchor="start" >GPIO opcional (R302 DNP)</text>
+<text x="860" y="828" class="tdm" text-anchor="start" >I2C_SDA</text>
+<text x="990" y="828" class="tdm" text-anchor="start" >P0.03</text>
+<text x="1060" y="828" class="tdm" text-anchor="start" >B1</text>
+<text x="1110" y="828" class="td" text-anchor="start" >TWIM30 SDA (como la DK)</text>
+<text x="860" y="848" class="tdm" text-anchor="start" >I2C_SCL</text>
+<text x="990" y="848" class="tdm" text-anchor="start" >P0.04</text>
+<text x="1060" y="848" class="tdm" text-anchor="start" >A0</text>
+<text x="1110" y="848" class="td" text-anchor="start" >TWIM30 SCL (clock pin)</text>
 <rect x="848" y="855" width="844" height="20" fill="#f1f5f9"/>
-<text x="860" y="868" class="tdm" text-anchor="start" >I2C_SDA</text>
-<text x="990" y="868" class="tdm" text-anchor="start" >P0.03</text>
-<text x="1060" y="868" class="tdm" text-anchor="start" >B1</text>
-<text x="1110" y="868" class="td" text-anchor="start" >TWIM30 SDA (como la DK)</text>
-<text x="860" y="888" class="tdm" text-anchor="start" >I2C_SCL</text>
-<text x="990" y="888" class="tdm" text-anchor="start" >P0.04</text>
-<text x="1060" y="888" class="tdm" text-anchor="start" >A0</text>
-<text x="1110" y="888" class="td" text-anchor="start" >TWIM30 SCL (clock pin)</text>
+<text x="860" y="868" class="tdm" text-anchor="start" >IMU_INT1</text>
+<text x="990" y="868" class="tdm" text-anchor="start" >P0.02</text>
+<text x="1060" y="868" class="tdm" text-anchor="start" >B0</text>
+<text x="1110" y="868" class="td" text-anchor="start" >GPIOTE30 ← INT1 del LSM6DS3TR-C</text>
+<text x="860" y="888" class="tdm" text-anchor="start" >IMU_INT2</text>
+<text x="990" y="888" class="tdm" text-anchor="start" >P0.05</text>
+<text x="1060" y="888" class="tdm" text-anchor="start" >C0</text>
+<text x="1110" y="888" class="td" text-anchor="start" >GPIOTE30 ← INT2 del LSM6DS3TR-C</text>
 <rect x="848" y="895" width="844" height="20" fill="#f1f5f9"/>
-<text x="860" y="908" class="tdm" text-anchor="start" >IMU_INT1</text>
-<text x="990" y="908" class="tdm" text-anchor="start" >P0.02</text>
-<text x="1060" y="908" class="tdm" text-anchor="start" >B0</text>
-<text x="1110" y="908" class="td" text-anchor="start" >GPIOTE30 ← INT1 del LSM6DS3TR-C</text>
-<text x="860" y="928" class="tdm" text-anchor="start" >IMU_INT2</text>
-<text x="990" y="928" class="tdm" text-anchor="start" >P0.05</text>
-<text x="1060" y="928" class="tdm" text-anchor="start" >C0</text>
-<text x="1110" y="928" class="td" text-anchor="start" >GPIOTE30 ← INT2 del LSM6DS3TR-C</text>
+<text x="860" y="908" class="tdm" text-anchor="start" >GNSS_TX</text>
+<text x="990" y="908" class="tdm" text-anchor="start" >P1.03</text>
+<text x="1060" y="908" class="tdm" text-anchor="start" >B8</text>
+<text x="1110" y="908" class="td" text-anchor="start" >UARTE20 TXD → RXD del GNSS</text>
+<text x="860" y="928" class="tdm" text-anchor="start" >GNSS_RX</text>
+<text x="990" y="928" class="tdm" text-anchor="start" >P1.29</text>
+<text x="1060" y="928" class="tdm" text-anchor="start" >B9</text>
+<text x="1110" y="928" class="td" text-anchor="start" >UARTE20 RXD ← TXD del GNSS</text>
 <rect x="848" y="935" width="844" height="20" fill="#f1f5f9"/>
-<text x="860" y="948" class="tdm" text-anchor="start" >GNSS_TX</text>
-<text x="990" y="948" class="tdm" text-anchor="start" >P1.03</text>
-<text x="1060" y="948" class="tdm" text-anchor="start" >B8</text>
-<text x="1110" y="948" class="td" text-anchor="start" >UARTE20 TXD → RXD del GNSS</text>
-<text x="860" y="968" class="tdm" text-anchor="start" >GNSS_RX</text>
-<text x="990" y="968" class="tdm" text-anchor="start" >P1.29</text>
-<text x="1060" y="968" class="tdm" text-anchor="start" >B9</text>
-<text x="1110" y="968" class="td" text-anchor="start" >UARTE20 RXD ← TXD del GNSS</text>
+<text x="860" y="948" class="tdm" text-anchor="start" >GNSS_PPS</text>
+<text x="990" y="948" class="tdm" text-anchor="start" >P1.04</text>
+<text x="1060" y="948" class="tdm" text-anchor="start" >A8</text>
+<text x="1110" y="948" class="td" text-anchor="start" >GPIOTE20 (PIN_GPS_PPS)</text>
+<text x="860" y="968" class="tdm" text-anchor="start" >GNSS_RST</text>
+<text x="990" y="968" class="tdm" text-anchor="start" >P1.00</text>
+<text x="1060" y="968" class="tdm" text-anchor="start" >A7</text>
+<text x="1110" y="968" class="td" text-anchor="start" >sólo por R405 0 Ω DNP (RESET del GNSS al aire)</text>
 <rect x="848" y="975" width="844" height="20" fill="#f1f5f9"/>
-<text x="860" y="988" class="tdm" text-anchor="start" >GNSS_PPS</text>
-<text x="990" y="988" class="tdm" text-anchor="start" >P1.04</text>
-<text x="1060" y="988" class="tdm" text-anchor="start" >A8</text>
-<text x="1110" y="988" class="td" text-anchor="start" >GPIOTE20 (PIN_GPS_PPS)</text>
-<text x="860" y="1008" class="tdm" text-anchor="start" >GNSS_RST</text>
-<text x="990" y="1008" class="tdm" text-anchor="start" >P1.00</text>
-<text x="1060" y="1008" class="tdm" text-anchor="start" >A7</text>
-<text x="1110" y="1008" class="td" text-anchor="start" >salida en drenador abierto</text>
+<text x="860" y="988" class="tdm" text-anchor="start" >GNSS_EN</text>
+<text x="990" y="988" class="tdm" text-anchor="start" >P1.05</text>
+<text x="1060" y="988" class="tdm" text-anchor="start" >C7</text>
+<text x="1110" y="988" class="td" text-anchor="start" >→ GPIO0 del nPM1300 (PIN_GPS_EN)</text>
+<text x="860" y="1008" class="tdm" text-anchor="start" >PMIC_INT</text>
+<text x="990" y="1008" class="tdm" text-anchor="start" >P1.06</text>
+<text x="1060" y="1008" class="tdm" text-anchor="start" >A6</text>
+<text x="1110" y="1008" class="td" text-anchor="start" >GPIOTE20 ← GPIO1 del nPM1300</text>
 <rect x="848" y="1015" width="844" height="20" fill="#f1f5f9"/>
-<text x="860" y="1028" class="tdm" text-anchor="start" >GNSS_EN</text>
-<text x="990" y="1028" class="tdm" text-anchor="start" >P1.05</text>
-<text x="1060" y="1028" class="tdm" text-anchor="start" >C7</text>
-<text x="1110" y="1028" class="td" text-anchor="start" >→ GPIO0 del nPM1300 (PIN_GPS_EN)</text>
-<text x="860" y="1048" class="tdm" text-anchor="start" >PMIC_INT</text>
-<text x="990" y="1048" class="tdm" text-anchor="start" >P1.06</text>
-<text x="1060" y="1048" class="tdm" text-anchor="start" >A6</text>
-<text x="1110" y="1048" class="td" text-anchor="start" >GPIOTE20 ← GPIO1 del nPM1300</text>
+<text x="860" y="1028" class="tdm" text-anchor="start" >VBAT_SENSE</text>
+<text x="990" y="1028" class="tdm" text-anchor="start" >P1.30</text>
+<text x="1060" y="1028" class="tdm" text-anchor="start" >A9</text>
+<text x="1110" y="1028" class="td" text-anchor="start" >AIN2 (BATTERY_PIN)</text>
+<text x="860" y="1048" class="tdm" text-anchor="start" >BTN_UP</text>
+<text x="990" y="1048" class="tdm" text-anchor="start" >P1.27</text>
+<text x="1060" y="1048" class="tdm" text-anchor="start" >F6</text>
+<text x="1110" y="1048" class="td" text-anchor="start" >GPIOTE20, pull-up interno</text>
 <rect x="848" y="1055" width="844" height="20" fill="#f1f5f9"/>
-<text x="860" y="1068" class="tdm" text-anchor="start" >VBAT_SENSE</text>
-<text x="990" y="1068" class="tdm" text-anchor="start" >P1.30</text>
-<text x="1060" y="1068" class="tdm" text-anchor="start" >A9</text>
-<text x="1110" y="1068" class="td" text-anchor="start" >AIN2 (BATTERY_PIN)</text>
-<text x="860" y="1088" class="tdm" text-anchor="start" >BTN_UP</text>
-<text x="990" y="1088" class="tdm" text-anchor="start" >P1.27</text>
-<text x="1060" y="1088" class="tdm" text-anchor="start" >F6</text>
+<text x="860" y="1068" class="tdm" text-anchor="start" >BTN_OK</text>
+<text x="990" y="1068" class="tdm" text-anchor="start" >P1.28</text>
+<text x="1060" y="1068" class="tdm" text-anchor="start" >E6</text>
+<text x="1110" y="1068" class="td" text-anchor="start" >GPIOTE20, pull-up interno (BUTTON1)</text>
+<text x="860" y="1088" class="tdm" text-anchor="start" >BTN_DOWN</text>
+<text x="990" y="1088" class="tdm" text-anchor="start" >P1.25</text>
+<text x="1060" y="1088" class="tdm" text-anchor="start" >E5</text>
 <text x="1110" y="1088" class="td" text-anchor="start" >GPIOTE20, pull-up interno</text>
 <rect x="848" y="1095" width="844" height="20" fill="#f1f5f9"/>
-<text x="860" y="1108" class="tdm" text-anchor="start" >BTN_OK</text>
-<text x="990" y="1108" class="tdm" text-anchor="start" >P1.28</text>
-<text x="1060" y="1108" class="tdm" text-anchor="start" >E6</text>
-<text x="1110" y="1108" class="td" text-anchor="start" >GPIOTE20, pull-up interno (BUTTON1)</text>
-<text x="860" y="1128" class="tdm" text-anchor="start" >BTN_DOWN</text>
-<text x="990" y="1128" class="tdm" text-anchor="start" >P1.25</text>
-<text x="1060" y="1128" class="tdm" text-anchor="start" >E5</text>
-<text x="1110" y="1128" class="td" text-anchor="start" >GPIOTE20, pull-up interno</text>
+<text x="860" y="1108" class="tdm" text-anchor="start" >BUZZER</text>
+<text x="990" y="1108" class="tdm" text-anchor="start" >P1.09</text>
+<text x="1060" y="1108" class="tdm" text-anchor="start" >D6</text>
+<text x="1110" y="1108" class="td" text-anchor="start" >PWM20 (PIN_BUZZER)</text>
+<text x="860" y="1128" class="tdm" text-anchor="start" >LED_STAT</text>
+<text x="990" y="1128" class="tdm" text-anchor="start" >P2.00</text>
+<text x="1060" y="1128" class="tdm" text-anchor="start" >F9</text>
+<text x="1110" y="1128" class="td" text-anchor="start" >GPIO salida (PIN_LED1)</text>
 <rect x="848" y="1135" width="844" height="20" fill="#f1f5f9"/>
-<text x="860" y="1148" class="tdm" text-anchor="start" >BUZZER</text>
-<text x="990" y="1148" class="tdm" text-anchor="start" >P1.09</text>
-<text x="1060" y="1148" class="tdm" text-anchor="start" >D6</text>
-<text x="1110" y="1148" class="td" text-anchor="start" >PWM20 (PIN_BUZZER)</text>
-<text x="860" y="1168" class="tdm" text-anchor="start" >LED_STAT</text>
-<text x="990" y="1168" class="tdm" text-anchor="start" >P2.00</text>
-<text x="1060" y="1168" class="tdm" text-anchor="start" >F9</text>
-<text x="1110" y="1168" class="td" text-anchor="start" >GPIO salida (PIN_LED1)</text>
-<rect x="848" y="1175" width="844" height="20" fill="#f1f5f9"/>
-<text x="860" y="1188" class="tdm" text-anchor="start" >DBG_TX</text>
-<text x="990" y="1188" class="tdm" text-anchor="start" >P2.02</text>
-<text x="1060" y="1188" class="tdm" text-anchor="start" >D9</text>
-<text x="1110" y="1188" class="td" text-anchor="start" >UARTE00 TXD (pin dedicado) → TP201</text>
-<text x="860" y="1208" class="tdm" text-anchor="start" >DBG_RX</text>
-<text x="990" y="1208" class="tdm" text-anchor="start" >P2.07</text>
-<text x="1060" y="1208" class="tdm" text-anchor="start" >E8</text>
-<text x="1110" y="1208" class="td" text-anchor="start" >UARTE00 RXD (pin dedicado) ← TP202</text>
+<text x="860" y="1148" class="tdm" text-anchor="start" >DBG_TX</text>
+<text x="990" y="1148" class="tdm" text-anchor="start" >P2.02</text>
+<text x="1060" y="1148" class="tdm" text-anchor="start" >D9</text>
+<text x="1110" y="1148" class="td" text-anchor="start" >UARTE00 TXD (pin dedicado) → TP201</text>
+<text x="860" y="1168" class="tdm" text-anchor="start" >DBG_RX</text>
+<text x="990" y="1168" class="tdm" text-anchor="start" >P2.07</text>
+<text x="1060" y="1168" class="tdm" text-anchor="start" >E8</text>
+<text x="1110" y="1168" class="td" text-anchor="start" >UARTE00 RXD (pin dedicado) ← TP202</text>
 <text x="856" y="1262" class="ts" text-anchor="start" >Reglas del nRF54LM20A: SERIAL2x sólo en P1/P3, SERIAL30 en P0, SERIAL00 en P2; IRQ y SENSE sólo en P0/P1/P3;</text>
 <text x="856" y="1280" class="ts" text-anchor="start" >SCK/SCL en clock pins. LoRa: SPIM22 (como la DK) · GNSS: UARTE20 · I²C: TWIM30 · depuración: UARTE00.</text>
-<text x="856" y="1298" class="tw" text-anchor="start" >E22 con cristal pasivo ⇒ la variante NO define SX126X_DIO3_TCXO_VOLTAGE.</text>
+<text x="856" y="1298" class="tw" text-anchor="start" >MS21SF1: cristal pasivo y conmutador por DIO2 ⇒ variante sin SX126X_DIO3_TCXO_VOLTAGE ni RXEN/TXEN (P1.12/P1.13 libres).</text>
 </svg>

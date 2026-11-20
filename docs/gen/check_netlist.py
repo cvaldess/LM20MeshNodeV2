@@ -46,7 +46,7 @@ H01 = {
 # ---------------------------------------------------------------------------------------------------- hoja 02
 # Mapa de pines copiado A MANO de la tabla E de docs/02_mcu.svg (señal: pad del ME54BS13)
 _MAPA02 = {"LORA_SCK": "16", "LORA_MOSI": "17", "LORA_MISO": "18", "LORA_NSS": "15", "LORA_BUSY": "14",
-           "LORA_DIO1": "13", "LORA_NRST": "12", "LORA_RXEN": "F3", "LORA_TXEN": "F4", "I2C_SDA": "B1",
+           "LORA_DIO1": "13", "LORA_NRST": "12", "I2C_SDA": "B1",  # rev 0.2: sin LORA_RXEN (F3) ni LORA_TXEN (F4)
            "I2C_SCL": "A0", "IMU_INT1": "B0", "IMU_INT2": "C0", "GNSS_TX": "B8", "GNSS_RX": "B9", "GNSS_PPS": "A8",
            "GNSS_RST": "A7", "GNSS_EN": "C7", "PMIC_INT": "A6", "VBAT_SENSE": "A9", "BTN_UP": "F6", "BTN_OK": "E6",
            "BTN_DOWN": "E5", "BUZZER": "D6", "LED_STAT": "F9"}
@@ -69,37 +69,37 @@ _usados = {p.split(".")[1] for v in H02["intent"].values() for p in v if p.start
 H02["al_aire"] += [f"U201.{pad}" for pad, nm in _PADS.items() if nm.startswith("P") and pad not in _usados]
 
 # ---------------------------------------------------------------------------------------------------- hoja 03
+# Rev 0.2 (20-11-2026), escrita a mano desde docs/03_lora.svg: MS21SF1 (pinout datasheet K §4) + π FB301
 H03 = {
     "hoja": "/03_lora/",
-    "jerarquicas": {"LORA_SCK", "LORA_MOSI", "LORA_MISO", "LORA_NSS", "LORA_BUSY", "LORA_DIO1", "LORA_NRST",
-                    "LORA_RXEN", "LORA_TXEN"},
+    "jerarquicas": {"LORA_SCK", "LORA_MOSI", "LORA_MISO", "LORA_NSS", "LORA_BUSY", "LORA_DIO1", "LORA_NRST"},
     "intent": {
-        "3V3": ["U301.1", "C301.1", "C302.1"],
-        "LORA_NRST": ["U301.3"], "LORA_NSS": ["U301.14"], "LORA_SCK": ["U301.15"], "LORA_MOSI": ["U301.13"],
-        "LORA_MISO": ["U301.12"], "LORA_BUSY": ["U301.11"], "LORA_DIO1": ["U301.20"],
-        "LORA_RXEN": ["U301.10", "R303.1"], "LORA_TXEN": ["R302.1"],
-        "TXEN": ["U301.9", "R301.2", "R302.2"], "DIO2": ["U301.19", "R301.1"],
-        "LORA_ANT": ["U301.6", "C303.1", "R304.1"], "LORA_RF": ["R304.2", "C304.1", "J301.1"],
-        "GND": ["U301.2", "U301.7", "U301.16", "R303.2", "C303.2", "C304.2", "C301.2", "C302.2", "J301.2", "J301.3"],
+        "3V3": ["FB301.1", "C303.1"],
+        "VDD_LORA": ["U301.8", "FB301.2", "C301.1", "C302.1"],
+        "LORA_NRST": ["U301.9"], "LORA_NSS": ["U301.13"], "LORA_SCK": ["U301.12"], "LORA_MOSI": ["U301.11"],
+        "LORA_MISO": ["U301.10"], "LORA_BUSY": ["U301.6"], "LORA_DIO1": ["U301.4"],
+        "GND": ["U301.1", "U301.7", "U301.15", "C301.2", "C302.2", "C303.2"],
     },
-    "al_aire": ["U301.18", "U301.4", "U301.5", "U301.8", "U301.17"],
+    "al_aire": ["U301.16", "U301.5", "U301.2", "U301.3", "U301.14"],   # 16 ANT: antena al U.FL del módulo
 }
 
 # ---------------------------------------------------------------------------------------------------- hoja 04
+# Rev 0.2 (20-11-2026), escrita a mano desde docs/04_gnss.svg: ME31GR02 (§4.1) + referencia §5.1 + pila BT401
 H04 = {
     "hoja": "/04_gnss/",
     "jerarquicas": {"GNSS_TX", "GNSS_RX", "GNSS_PPS", "GNSS_RST"},
     "intent": {
-        "V_GNSS": ["U401.23", "C401.1", "C402.1", "R404.2"], "3V3": ["R401.1", "R404.1"],
-        "V_BCKP": ["U401.22", "R401.2", "C403.1"],
-        "GNSS_RXD": ["U401.21", "R402.2"], "GNSS_TXD": ["U401.20", "R403.2"],
-        "GNSS_TX": ["R402.1"], "GNSS_RX": ["R403.1"], "GNSS_RST": ["U401.8"], "GNSS_PPS": ["U401.3"],
-        "SAFEBOOT": ["U401.2", "TP401.1"],
-        "GNSS_RFIN": ["U401.11", "C404.2"], "VCC_RF": ["U401.9", "L401.2"],
-        "GNSS_ANT": ["J401.1", "C404.1", "L401.1"],
-        "GND": ["U401.10", "U401.12", "U401.13", "U401.24", "C401.2", "C402.2", "C403.2", "J401.2", "J401.3"],
+        "V_GNSS": ["U401.8", "C401.1", "C402.1", "R404.2"], "3V3": ["D401.2", "R404.1"],   # D401: 2 = ánodo
+        "BCKP_D": ["D401.1", "R401.1"],
+        "V_BCKP": ["U401.6", "R401.2", "C403.1", "BT401.1"],
+        "GNSS_RXD": ["U401.3", "R402.2", "TP402.1"], "GNSS_TXD": ["U401.2", "R403.2", "TP401.1"],
+        "GNSS_TX": ["R402.1"], "GNSS_RX": ["R403.1"], "GNSS_RST": ["R405.1"], "GNSS_PPS": ["U401.4"],
+        "GNSS_RESET": ["U401.9", "R405.2"],
+        "GNSS_RFIN": ["U401.11", "J401.1", "L401.1"], "VCC_RF": ["U401.14", "L401.2", "C404.1"],
+        "GND": ["U401.1", "U401.10", "U401.12", "C401.2", "C402.2", "C403.2", "C404.2", "J401.2", "J401.3",
+                "BT401.2"],
     },
-    "al_aire": ["U401.4", "U401.14"] + [f"U401.{n}" for n in (1, 5, 6, 7, 15, 16, 17, 18, 19)],
+    "al_aire": [f"U401.{n}" for n in (5, 7, 13, 15, 16, 17, 18)],
 }
 
 # ---------------------------------------------------------------------------------------------------- hoja 05

@@ -47,8 +47,8 @@
  .tdm { font-size:11px; fill:#263238; font-family:Consolas, monospace; }
 </style></defs>
 <rect width="1720" height="1000" fill="#ffffff"/>
-<text x="24" y="36" class="h1" text-anchor="start" >03 · LoRa — E22-900MM22S (SX1262, 22 dBm)</text>
-<text x="24" y="56" class="h2" text-anchor="start" >nrf54lm20-meshnode · hoja 3 · referencias 3xx · intención de 03_lora.kicad_sch</text>
+<text x="24" y="36" class="h1" text-anchor="start" >03 · LoRa — MinewSemi MS21SF1 (SX1262, 22 dBm)</text>
+<text x="24" y="56" class="h2" text-anchor="start" >nrf54lm20-meshnode rev 0.2 · hoja 3 · referencias 3xx · intención de 03_lora.kicad_sch</text>
 <rect x="760" y="31" width="34.2" height="18" rx="3" class="lab_p"/>
 <text x="777.1" y="44.5" class="lp" text-anchor="middle" >3V3</text>
 <text x="806" y="44" class="ts" text-anchor="start" >alimentación global</text>
@@ -62,73 +62,61 @@
 <text x="1360" y="44" class="ts" text-anchor="start" >DNP / opcional</text>
 <rect x="1465" y="31" width="34" height="18" rx="3" class="symp"/>
 <text x="1505" y="44" class="ts" text-anchor="start" >pendiente de confirmar</text>
-<rect x="20" y="76" width="860" height="600" rx="7" class="frame"/>
-<text x="32" y="96" class="ft" text-anchor="start" >A · U301 E22-900MM22S</text>
-<rect x="320" y="150" width="170" height="404" rx="3" class="sym"/>
-<text x="405.0" y="128" class="icref" text-anchor="middle" >U301</text>
-<text x="405.0" y="142" class="val" text-anchor="middle" >E22-900MM22S · Ebyte</text>
+<rect x="20" y="76" width="860" height="604" rx="7" class="frame"/>
+<text x="32" y="96" class="ft" text-anchor="start" >A · U301 MS21SF1-SX1262 — conmutador de RF y U.FL dentro del módulo</text>
+<rect x="320" y="150" width="190" height="348" rx="3" class="sym"/>
+<text x="415.0" y="128" class="icref" text-anchor="middle" >U301</text>
+<text x="415.0" y="142" class="val" text-anchor="middle" >MS21SF1-SX1262 · MinewSemi</text>
 <path d="M300,170 L320,170" class="w"/>
-<text x="316" y="166" class="pn" text-anchor="end" >1</text>
-<text x="326" y="174" class="pname" text-anchor="start" >VCC</text>
+<text x="316" y="166" class="pn" text-anchor="end" >8</text>
+<text x="326" y="174" class="pname" text-anchor="start" >VDD</text>
 <path d="M300,226 L320,226" class="w"/>
-<text x="316" y="222" class="pn" text-anchor="end" >3</text>
-<text x="326" y="230" class="pname" text-anchor="start" >NRST</text>
+<text x="316" y="222" class="pn" text-anchor="end" >9</text>
+<text x="326" y="230" class="pname" text-anchor="start" >SX_NRESET</text>
 <path d="M300,282 L320,282" class="w"/>
-<text x="316" y="278" class="pn" text-anchor="end" >14</text>
+<text x="316" y="278" class="pn" text-anchor="end" >13</text>
 <text x="326" y="286" class="pname" text-anchor="start" >NSS</text>
 <path d="M300,310 L320,310" class="w"/>
-<text x="316" y="306" class="pn" text-anchor="end" >15</text>
+<text x="316" y="306" class="pn" text-anchor="end" >12</text>
 <text x="326" y="314" class="pname" text-anchor="start" >SCK</text>
 <path d="M300,338 L320,338" class="w"/>
-<text x="316" y="334" class="pn" text-anchor="end" >13</text>
+<text x="316" y="334" class="pn" text-anchor="end" >11</text>
 <text x="326" y="342" class="pname" text-anchor="start" >MOSI</text>
 <path d="M300,366 L320,366" class="w"/>
-<text x="316" y="362" class="pn" text-anchor="end" >12</text>
+<text x="316" y="362" class="pn" text-anchor="end" >10</text>
 <text x="326" y="370" class="pname" text-anchor="start" >MISO</text>
 <path d="M300,422 L320,422" class="w"/>
-<text x="316" y="418" class="pn" text-anchor="end" >2</text>
+<text x="316" y="418" class="pn" text-anchor="end" >1</text>
 <text x="326" y="426" class="pname" text-anchor="start" >GND</text>
 <path d="M300,450 L320,450" class="w"/>
 <text x="316" y="446" class="pn" text-anchor="end" >7</text>
 <text x="326" y="454" class="pname" text-anchor="start" >GND</text>
 <path d="M300,478 L320,478" class="w"/>
-<text x="316" y="474" class="pn" text-anchor="end" >16</text>
+<text x="316" y="474" class="pn" text-anchor="end" >15</text>
 <text x="326" y="482" class="pname" text-anchor="start" >GND</text>
-<path d="M490,170 L510,170" class="w"/>
-<text x="494" y="166" class="pn" text-anchor="start" >6</text>
-<text x="484" y="174" class="pname" text-anchor="end" >ANT</text>
-<path d="M490,226 L510,226" class="w"/>
-<text x="494" y="222" class="pn" text-anchor="start" >9</text>
-<text x="484" y="230" class="pname" text-anchor="end" >TXEN</text>
-<path d="M490,254 L510,254" class="w"/>
-<text x="494" y="250" class="pn" text-anchor="start" >10</text>
-<text x="484" y="258" class="pname" text-anchor="end" >RXEN</text>
-<path d="M490,310 L510,310" class="w"/>
-<text x="494" y="306" class="pn" text-anchor="start" >11</text>
-<text x="484" y="314" class="pname" text-anchor="end" >BUSY</text>
-<path d="M490,338 L510,338" class="w"/>
-<text x="494" y="334" class="pn" text-anchor="start" >20</text>
-<text x="484" y="342" class="pname" text-anchor="end" >DIO1</text>
-<path d="M490,366 L510,366" class="w"/>
-<text x="494" y="362" class="pn" text-anchor="start" >19</text>
-<text x="484" y="370" class="pname" text-anchor="end" >DIO2</text>
-<path d="M490,394 L510,394" class="w"/>
-<text x="494" y="390" class="pn" text-anchor="start" >18</text>
-<text x="484" y="398" class="pname" text-anchor="end" >DIO3</text>
-<path d="M490,450 L510,450" class="w"/>
-<text x="494" y="446" class="pn" text-anchor="start" >4</text>
-<text x="484" y="454" class="pname" text-anchor="end" >NC</text>
-<path d="M490,478 L510,478" class="w"/>
-<text x="494" y="474" class="pn" text-anchor="start" >5</text>
-<text x="484" y="482" class="pname" text-anchor="end" >NC</text>
-<path d="M490,506 L510,506" class="w"/>
-<text x="494" y="502" class="pn" text-anchor="start" >8</text>
-<text x="484" y="510" class="pname" text-anchor="end" >NC</text>
-<path d="M490,534 L510,534" class="w"/>
-<text x="494" y="530" class="pn" text-anchor="start" >17</text>
-<text x="484" y="538" class="pname" text-anchor="end" >NC</text>
-<rect x="265.8" y="161" width="34.2" height="18" rx="3" class="lab_p"/>
-<text x="282.90000000000003" y="174.5" class="lp" text-anchor="middle" >3V3</text>
+<path d="M510,170 L530,170" class="w"/>
+<text x="514" y="166" class="pn" text-anchor="start" >16</text>
+<text x="504" y="174" class="pname" text-anchor="end" >ANT</text>
+<path d="M510,226 L530,226" class="w"/>
+<text x="514" y="222" class="pn" text-anchor="start" >6</text>
+<text x="504" y="230" class="pname" text-anchor="end" >BUSY</text>
+<path d="M510,254 L530,254" class="w"/>
+<text x="514" y="250" class="pn" text-anchor="start" >4</text>
+<text x="504" y="258" class="pname" text-anchor="end" >DIO1</text>
+<path d="M510,282 L530,282" class="w"/>
+<text x="514" y="278" class="pn" text-anchor="start" >5</text>
+<text x="504" y="286" class="pname" text-anchor="end" >DIO3</text>
+<path d="M510,338 L530,338" class="w"/>
+<text x="514" y="334" class="pn" text-anchor="start" >2</text>
+<text x="504" y="342" class="pname" text-anchor="end" >NC</text>
+<path d="M510,366 L530,366" class="w"/>
+<text x="514" y="362" class="pn" text-anchor="start" >3</text>
+<text x="504" y="370" class="pname" text-anchor="end" >NC</text>
+<path d="M510,394 L530,394" class="w"/>
+<text x="514" y="390" class="pn" text-anchor="start" >14</text>
+<text x="504" y="398" class="pname" text-anchor="end" >NC</text>
+<rect x="228.8" y="161" width="71.2" height="18" rx="3" class="lab_l"/>
+<text x="264.40000000000003" y="174.5" class="ll" text-anchor="middle" >VDD_LORA</text>
 <rect x="221.39999999999998" y="217" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
 <text x="260.7" y="230.5" class="lsb" text-anchor="middle" >LORA_NRST</text>
 <rect x="228.8" y="273" width="71.2" height="18" rx="3" class="lab_s"/>
@@ -154,156 +142,98 @@
 <path d="M281,485 L299,485" class="w"/>
 <path d="M284,489 L296,489" class="w"/>
 <path d="M287,493 L293,493" class="w"/>
-<rect x="510" y="161" width="71.2" height="18" rx="3" class="lab_l"/>
-<text x="545.6" y="174.5" class="ll" text-anchor="middle" >LORA_ANT</text>
-<rect x="510" y="217" width="41.6" height="18" rx="3" class="lab_l"/>
-<text x="530.8" y="230.5" class="ll" text-anchor="middle" >TXEN</text>
-<rect x="510" y="245" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
-<text x="549.3" y="258.5" class="lsb" text-anchor="middle" >LORA_RXEN</text>
-<rect x="510" y="301" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
-<text x="549.3" y="314.5" class="lsb" text-anchor="middle" >LORA_BUSY</text>
-<rect x="510" y="329" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
-<text x="549.3" y="342.5" class="lsb" text-anchor="middle" >LORA_DIO1</text>
-<rect x="510" y="357" width="41.6" height="18" rx="3" class="lab_l"/>
-<text x="530.8" y="370.5" class="ll" text-anchor="middle" >DIO2</text>
-<path d="M505,389 L515,399" class="nc"/>
-<path d="M505,399 L515,389" class="nc"/>
-<path d="M505,445 L515,455" class="nc"/>
-<path d="M505,455 L515,445" class="nc"/>
-<path d="M505,473 L515,483" class="nc"/>
-<path d="M505,483 L515,473" class="nc"/>
-<path d="M505,501 L515,511" class="nc"/>
-<path d="M505,511 L515,501" class="nc"/>
-<path d="M505,529 L515,539" class="nc"/>
-<path d="M505,539 L515,529" class="nc"/>
-<text x="40" y="594" class="ts" text-anchor="start" >Interruptor de RF interno (tabla 1): TXEN=1/RXEN=0 ⇒ TX · TXEN=0/RXEN=1 ⇒ RX · 0/0 ⇒ apagado.</text>
-<text x="40" y="613" class="ts" text-anchor="start" >DIO2 gobierna TXEN (SX126X_DIO2_AS_RF_SWITCH) y RadioLib mueve RXEN (SX126X_RXEN = P1.13).</text>
-<text x="40" y="632" class="ts" text-anchor="start" >DIO3 sin conectar: el MM22S lleva cristal PASIVO (la versión «(T)» lleva TCXO y tiene la misma huella).</text>
-<text x="40" y="651" class="tw" text-anchor="start" >⇒ la variante NO define SX126X_DIO3_TCXO_VOLTAGE (la DK sí, con el E22-900M30S).</text>
-<text x="40" y="670" class="ts" text-anchor="start" >NRST con pull-up interno del SX1262: lo mueve el MCU (LORA_NRST).</text>
+<path d="M525,165 L535,175" class="nc"/>
+<path d="M525,175 L535,165" class="nc"/>
+<rect x="530" y="217" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
+<text x="569.3" y="230.5" class="lsb" text-anchor="middle" >LORA_BUSY</text>
+<rect x="530" y="245" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
+<text x="569.3" y="258.5" class="lsb" text-anchor="middle" >LORA_DIO1</text>
+<path d="M525,277 L535,287" class="nc"/>
+<path d="M525,287 L535,277" class="nc"/>
+<path d="M525,333 L535,343" class="nc"/>
+<path d="M525,343 L535,333" class="nc"/>
+<path d="M525,361 L535,371" class="nc"/>
+<path d="M525,371 L535,361" class="nc"/>
+<path d="M525,389 L535,399" class="nc"/>
+<path d="M525,399 L535,389" class="nc"/>
+<text x="542" y="174" class="ts" text-anchor="start" >sin pista: la antena va al U.FL del módulo</text>
+<text x="40" y="538" class="ts" text-anchor="start" >Conmutador de RF interno gobernado por DIO2 (V1 = ANT_SW1 = DIO2, p. 9); DIO2 no sale del módulo.</text>
+<text x="40" y="557" class="tw" text-anchor="start" >⇒ variante: SX126X_DIO2_AS_RF_SWITCH y SIN SX126X_RXEN / SX126X_TXEN (P1.12 y P1.13 quedan libres).</text>
+<text x="40" y="576" class="ts" text-anchor="start" >Cristal PASIVO de 32 MHz (Y1 a XTA/XTB en el esquema interno, p. 9): DIO3 al aire.</text>
+<text x="40" y="595" class="tw" text-anchor="start" >⇒ la variante NO define SX126X_DIO3_TCXO_VOLTAGE (igual que con el E22-900MM22S).</text>
+<text x="40" y="614" class="ts" text-anchor="start" >Patas 2, 3 y 14 NC (pedido estándar: R1 0 Ω / R2 NC dentro del módulo ⇒ 14 = NC).</text>
+<text x="40" y="633" class="ts" text-anchor="start" >NRST con pull-up interno del SX1262: lo mueve el MCU (LORA_NRST). SPI hasta 16 MHz (P1 limita a 8).</text>
+<text x="40" y="652" class="ts" text-anchor="start" >Pedir la versión SX1262 (3N62AI-X): el LLCC68 no hace SF11/BW250 (LongFast). Mismo hardware EU868/US915.</text>
 <rect x="900" y="76" width="800" height="300" rx="7" class="frame"/>
-<text x="912" y="96" class="ft" text-anchor="start" >B · Control del interruptor de antena</text>
-<rect x="938.4" y="131" width="41.6" height="18" rx="3" class="lab_l"/>
-<text x="959.1999999999999" y="144.5" class="ll" text-anchor="middle" >DIO2</text>
-<path d="M980,140 L1007.0,140" class="w"/>
-<path d="M1033.0,140 L1060,140" class="w"/>
-<rect x="1007.0" y="135" width="26" height="10" class="sym"/>
-<text x="1020.0" y="131" class="ref" text-anchor="middle" >R301 0 Ω</text>
-<path d="M1060,140 L1150,140" class="w"/>
-<circle cx="1150" cy="140" r="3.2" fill="#263238"/>
-<rect x="1170" y="131" width="41.6" height="18" rx="3" class="lab_l"/>
-<text x="1190.8" y="144.5" class="ll" text-anchor="middle" >TXEN</text>
-<path d="M1150,140 L1170,140" class="w"/>
-<rect x="901.4" y="191" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
-<text x="940.6999999999999" y="204.5" class="lsb" text-anchor="middle" >LORA_TXEN</text>
-<path d="M980,200 L1007.0,200" class="w"/>
-<path d="M1033.0,200 L1060,200" class="w"/>
-<rect x="1007.0" y="195" width="26" height="10" class="dnp"/>
-<text x="1020.0" y="191" class="ref" text-anchor="middle" >R302 0 Ω DNP</text>
-<path d="M1060,200 L1150,200 L1150,140" class="w"/>
-<rect x="1251.4" y="131" width="78.60000000000001" height="18" rx="3" class="lab_s"/>
-<text x="1290.7" y="144.5" class="lsb" text-anchor="middle" >LORA_RXEN</text>
-<path d="M1330,140 L1360,140" class="w"/>
-<circle cx="1360" cy="140" r="3.2" fill="#263238"/>
-<path d="M1360,140 L1360,152.0" class="w"/>
-<path d="M1360,178.0 L1360,190" class="w"/>
-<rect x="1355" y="152.0" width="10" height="26" class="sym"/>
-<text x="1369" y="163.0" class="ref" text-anchor="start" >R303</text>
-<text x="1369" y="176.0" class="val" text-anchor="start" >100 kΩ</text>
-<path d="M1360,190 L1360,197" class="w"/>
-<path d="M1351,197 L1369,197" class="w"/>
-<path d="M1354,201 L1366,201" class="w"/>
-<path d="M1357,205 L1363,205" class="w"/>
-<text x="920" y="260" class="ts" text-anchor="start" >R301 montada: TXEN = DIO2 (lo que hace Meshtastic). R302 sin montar: alternativa con</text>
-<text x="920" y="275" class="ts" text-anchor="start" >TXEN desde el MCU (P1.12) si hiciera falta. R303: RXEN a 0 mientras el MCU arranca</text>
-<text x="920" y="290" class="ts" text-anchor="start" >(los GPIO salen en alta impedancia) ⇒ interruptor apagado, sin estado indefinido.</text>
+<text x="912" y="96" class="ft" text-anchor="start" >B · Alimentación del módulo (Minew §8.3: π reservada con fuente conmutada)</text>
+<rect x="915.8" y="131" width="34.2" height="18" rx="3" class="lab_p"/>
+<text x="932.9" y="144.5" class="lp" text-anchor="middle" >3V3</text>
+<path d="M950,140 L1040,140" class="pw"/>
+<circle cx="1000" cy="140" r="3.2" fill="#263238"/>
+<path d="M1000,140 L1000,159.0" class="w"/>
+<path d="M1000,165.0 L1000,184" class="w"/>
+<path d="M991,159.0 L1009,159.0" class="plate"/>
+<path d="M991,165.0 L1009,165.0" class="plate"/>
+<text x="988" y="160.0" class="ref" text-anchor="end" >C303</text>
+<text x="988" y="173.0" class="val" text-anchor="end" >10 µF</text>
+<path d="M1000,184 L1000,191" class="w"/>
+<path d="M991,191 L1009,191" class="w"/>
+<path d="M994,195 L1006,195" class="w"/>
+<path d="M997,199 L1003,199" class="w"/>
+<path d="M1040,140 L1072.0,140" class="w"/>
+<path d="M1098.0,140 L1130,140" class="w"/>
+<rect x="1072.0" y="135" width="26" height="10" class="symp"/>
+<text x="1085.0" y="131" class="ref" text-anchor="middle" >FB301 0 Ω (o ferrita 600 Ω)</text>
+<path d="M1130,140 L1290,140" class="pw"/>
+<circle cx="1180" cy="140" r="3.2" fill="#263238"/>
+<circle cx="1240" cy="140" r="3.2" fill="#263238"/>
+<path d="M1180,140 L1180,159.0" class="w"/>
+<path d="M1180,165.0 L1180,184" class="w"/>
+<path d="M1171,159.0 L1189,159.0" class="plate"/>
+<path d="M1171,165.0 L1189,165.0" class="plate"/>
+<text x="1192" y="160.0" class="ref" text-anchor="start" >C301</text>
+<text x="1192" y="173.0" class="val" text-anchor="start" >22 µF</text>
+<path d="M1180,184 L1180,191" class="w"/>
+<path d="M1171,191 L1189,191" class="w"/>
+<path d="M1174,195 L1186,195" class="w"/>
+<path d="M1177,199 L1183,199" class="w"/>
+<path d="M1240,140 L1240,159.0" class="w"/>
+<path d="M1240,165.0 L1240,184" class="w"/>
+<path d="M1231,159.0 L1249,159.0" class="plate"/>
+<path d="M1231,165.0 L1249,165.0" class="plate"/>
+<text x="1252" y="160.0" class="ref" text-anchor="start" >C302</text>
+<text x="1252" y="173.0" class="val" text-anchor="start" >100 nF</text>
+<path d="M1240,184 L1240,191" class="w"/>
+<path d="M1231,191 L1249,191" class="w"/>
+<path d="M1234,195 L1246,195" class="w"/>
+<path d="M1237,199 L1243,199" class="w"/>
+<rect x="1290" y="131" width="71.2" height="18" rx="3" class="lab_l"/>
+<text x="1325.6" y="144.5" class="ll" text-anchor="middle" >VDD_LORA</text>
+<text x="920" y="240" class="ts" text-anchor="start" >FB301 = π que pide Minew (3V3 sale del BUCK2): 0 Ω de serie; ferrita CBW160808U601T</text>
+<text x="920" y="259" class="ts" text-anchor="start" >(#4: 1 A, 0,4 Ω ⇒ 50 mV en TX) si el buck se cuela en la recepción. Igual que FB201.</text>
+<text x="920" y="278" class="ts" text-anchor="start" >C301/C302 a ≤ 0,5 mm de la pata 8, con dos vías a GND (§8.3).</text>
+<text x="920" y="297" class="ts" text-anchor="start" >Consumo a 3,3 V (p. 9): TX 22 dBm 112–123 mA de pico · RX 4,76 mA · sleep ≈ 0,9 µA.</text>
 <rect x="900" y="390" width="800" height="246" rx="7" class="frame"/>
-<text x="912" y="410" class="ft" text-anchor="start" >C · Antena 868 MHz: π de adaptación + U.FL</text>
-<rect x="888.8" y="441" width="71.2" height="18" rx="3" class="lab_l"/>
-<text x="924.4" y="454.5" class="ll" text-anchor="middle" >LORA_ANT</text>
-<path d="M960,450 L990,450" class="rf"/>
-<circle cx="990" cy="450" r="3.2" fill="#263238"/>
-<path d="M990,450 L990,469.0" class="w"/>
-<path d="M990,475.0 L990,494" class="w"/>
-<path d="M981,469.0 L999,469.0" class="plated"/>
-<path d="M981,475.0 L999,475.0" class="plated"/>
-<text x="978" y="470.0" class="ref" text-anchor="end" >C303</text>
-<text x="978" y="483.0" class="val" text-anchor="end" >DNP</text>
-<path d="M990,494 L990,501" class="w"/>
-<path d="M981,501 L999,501" class="w"/>
-<path d="M984,505 L996,505" class="w"/>
-<path d="M987,509 L993,509" class="w"/>
-<path d="M990,450 L1022.0,450" class="rf"/>
-<path d="M1048.0,450 L1080,450" class="rf"/>
-<rect x="1022.0" y="445" width="26" height="10" class="sym"/>
-<text x="1035.0" y="441" class="ref" text-anchor="middle" >R304 0 Ω</text>
-<circle cx="1080" cy="450" r="3.2" fill="#263238"/>
-<path d="M1080,450 L1080,469.0" class="w"/>
-<path d="M1080,475.0 L1080,494" class="w"/>
-<path d="M1071,469.0 L1089,469.0" class="plated"/>
-<path d="M1071,475.0 L1089,475.0" class="plated"/>
-<text x="1092" y="470.0" class="ref" text-anchor="start" >C304</text>
-<text x="1092" y="483.0" class="val" text-anchor="start" >DNP</text>
-<path d="M1080,494 L1080,501" class="w"/>
-<path d="M1071,501 L1089,501" class="w"/>
-<path d="M1074,505 L1086,505" class="w"/>
-<path d="M1077,509 L1083,509" class="w"/>
-<path d="M1080,450 L1200,450" class="rf"/>
-<rect x="1220" y="430" width="110" height="64" rx="3" class="sym"/>
-<text x="1275.0" y="408" class="icref" text-anchor="middle" >J301</text>
-<text x="1275.0" y="422" class="val" text-anchor="middle" >BWU.FL-IPEX1 · C5137195</text>
-<path d="M1200,450 L1220,450" class="w"/>
-<text x="1216" y="446" class="pn" text-anchor="end" >1</text>
-<text x="1226" y="454" class="pname" text-anchor="start" >SIG</text>
-<path d="M1330,450 L1350,450" class="w"/>
-<text x="1334" y="446" class="pn" text-anchor="start" >2</text>
-<text x="1324" y="454" class="pname" text-anchor="end" >GND</text>
-<path d="M1330,474 L1350,474" class="w"/>
-<text x="1334" y="470" class="pn" text-anchor="start" >3</text>
-<text x="1324" y="478" class="pname" text-anchor="end" >GND</text>
-<path d="M1200,450 L1200,450" class="rf"/>
-<path d="M1350,450 L1360,450" class="w"/>
-<path d="M1360,450 L1360,457" class="w"/>
-<path d="M1351,457 L1369,457" class="w"/>
-<path d="M1354,461 L1366,461" class="w"/>
-<path d="M1357,465 L1363,465" class="w"/>
-<path d="M1350,474 L1360,474" class="w"/>
-<path d="M1360,474 L1360,481" class="w"/>
-<path d="M1351,481 L1369,481" class="w"/>
-<path d="M1354,485 L1366,485" class="w"/>
-<path d="M1357,489 L1363,489" class="w"/>
-<text x="920" y="540" class="ts" text-anchor="start" >Pista de 50 Ω en coplanar con plano de GND (4 capas) desde la pata 6 hasta el U.FL;</text>
-<text x="920" y="555" class="ts" text-anchor="start" >π en 0402 pegada al módulo: 0 Ω de serie y los shunts sin montar salvo que haya que</text>
-<text x="920" y="570" class="ts" text-anchor="start" >adaptar midiendo. Vías de GND a lo largo de la pista. Lejos del U.FL del GNSS.</text>
-<rect x="20" y="690" width="860" height="150" rx="7" class="frame"/>
-<text x="32" y="710" class="ft" text-anchor="start" >D · Desacoplo (E22 §5.1: «external ceramic filter capacitor recommended»)</text>
-<rect x="85.8" y="736" width="34.2" height="18" rx="3" class="lab_p"/>
-<text x="102.9" y="749.5" class="lp" text-anchor="middle" >3V3</text>
-<path d="M120,745 L230,745" class="w"/>
-<path d="M140,745 L140,764.0" class="w"/>
-<path d="M140,770.0 L140,789" class="w"/>
-<path d="M131,764.0 L149,764.0" class="plate"/>
-<path d="M131,770.0 L149,770.0" class="plate"/>
-<text x="152" y="765.0" class="ref" text-anchor="start" >C301</text>
-<text x="152" y="778.0" class="val" text-anchor="start" >22 µF 10 V</text>
-<path d="M140,789 L140,796" class="w"/>
-<path d="M131,796 L149,796" class="w"/>
-<path d="M134,800 L146,800" class="w"/>
-<path d="M137,804 L143,804" class="w"/>
-<circle cx="230" cy="745" r="3.2" fill="#263238"/>
-<path d="M230,745 L230,764.0" class="w"/>
-<path d="M230,770.0 L230,789" class="w"/>
-<path d="M221,764.0 L239,764.0" class="plate"/>
-<path d="M221,770.0 L239,770.0" class="plate"/>
-<text x="242" y="765.0" class="ref" text-anchor="start" >C302</text>
-<text x="242" y="778.0" class="val" text-anchor="start" >100 nF</text>
-<path d="M230,789 L230,796" class="w"/>
-<path d="M221,796 L239,796" class="w"/>
-<path d="M224,800 L236,800" class="w"/>
-<path d="M227,804 L233,804" class="w"/>
-<text x="340" y="747" class="ts" text-anchor="start" >C301 cubre los picos de TX (140 mA a 22 dBm) sin tirar del buck;</text>
-<text x="340" y="762" class="ts" text-anchor="start" >C302 pegado a la pata 1. 3V3 llega del BUCK2 (hoja 01).</text>
-<rect x="900" y="650" width="800" height="300" rx="7" class="frame"/>
+<text x="912" y="410" class="ft" text-anchor="start" >C · Qué cambia respecto a la rev 0.1 (E22-900MM22S)</text>
+<text x="920" y="430" class="ts" text-anchor="start" >Fuera: J301 (U.FL), π de antena R304/C304, R301/R302 (TXEN) y R303 (pull-down de RXEN).</text>
+<text x="920" y="451" class="ts" text-anchor="start" >C303 cambia de función: ahora es la entrada de la π de alimentación (10 µF).</text>
+<text x="920" y="472" class="tw" text-anchor="start" >Desaparecen LORA_RXEN (P1.13) y LORA_TXEN (P1.12): fuera de la hoja 02 y de la raíz.</text>
+<text x="920" y="493" class="ts" text-anchor="start" >Igual que antes: LORA_SCK/MOSI/MISO/NSS/BUSY/DIO1/NRST en los mismos puertos (castellados</text>
+<text x="920" y="514" class="ts" text-anchor="start" >12-18 del ME54BS13) y 3V3 siempre vivo (mismo raíl que el MCU: sin estado parcial).</text>
+<text x="920" y="535" class="ts" text-anchor="start" >Huella meshnode:MS21SF1 (la de Minew, 16 castellados paso 1,8) y STEP MS21SF1_PCB_V1.0 ya en libs/.</text>
+<text x="920" y="556" class="ts" text-anchor="start" >El módulo es 16,4 × 15 × 3 mm (el E22 era 10 × 10): la colocación de la franja LoRa cambia.</text>
+<rect x="20" y="694" width="860" height="296" rx="7" class="frame"/>
+<text x="32" y="714" class="ft" text-anchor="start" >D · Notas de colocación (Minew §8.2–8.5)</text>
+<text x="36" y="734" class="ts" text-anchor="start" >• U.FL del módulo hacia un canto, con el cable de antena saliendo por fuera; nada metálico encima.</text>
+<text x="36" y="755" class="ts" text-anchor="start" >• 0,5 mm alrededor del módulo sin pistas ni piezas que no sean GND; plano GND continuo debajo</text>
+<text x="36" y="776" class="ts" text-anchor="start" >    (In1 entero) y una vía a GND junto a cada pad de GND (1, 7, 15).</text>
+<text x="36" y="797" class="ts" text-anchor="start" >• Pata 16 (ANT) sin pista y rodeada sólo de GND: es RF aunque aquí no se use.</text>
+<text x="36" y="818" class="ts" text-anchor="start" >• Minew pide 20 mm a bucks/inductores, 25 mm a pantallas y 50 mm entre módulos: en 40 × 86 mm no</text>
+<text x="36" y="839" class="ts" text-anchor="start" >    cabe ⇒ como en la rev 0.1: planos GND continuos, módulos en zonas distintas y L101/L102 lejos.</text>
+<text x="36" y="860" class="ts" text-anchor="start" >• ≥ 5 mm a tornillos (H1–H4, M2) y ~4 mm libres alrededor para soldar y retrabajar.</text>
+<text x="36" y="881" class="tp" text-anchor="start" >• Plantilla: Minew recomienda 0,2 mm escalonada (+0,8 mm) en el módulo y la placa usa 0,10 mm</text>
+<text x="36" y="902" class="tp" text-anchor="start" >    ⇒ revisar la pasta de los castellados en la huella antes de pedir el stencil.</text>
+<rect x="900" y="650" width="800" height="340" rx="7" class="frame"/>
 <text x="912" y="670" class="ft" text-anchor="start" >Piezas de la hoja</text>
 <text x="920" y="690" class="th" text-anchor="start" >Ref.</text>
 <text x="1010" y="690" class="th" text-anchor="start" >Qué es</text>
@@ -314,59 +244,36 @@
 <path d="M910,696 L1690,696" class="thin"/>
 <text x="920" y="714" class="tdm" text-anchor="start" >U301</text>
 <text x="1010" y="714" class="td" text-anchor="start" >módulo LoRa SX1262</text>
-<text x="1150" y="714" class="td" text-anchor="start" >Ebyte E22-900MM22S</text>
-<text x="1350" y="714" class="td" text-anchor="start" >SMD 10×10</text>
+<text x="1150" y="714" class="td" text-anchor="start" >MinewSemi MS21SF1-SX1262</text>
+<text x="1350" y="714" class="td" text-anchor="start" >SMD 16,4×15</text>
 <text x="1440" y="714" class="tdm" text-anchor="start" >—</text>
-<text x="1530" y="714" class="td" text-anchor="start" >cajón #195 (2)</text>
+<text x="1530" y="714" class="td" text-anchor="start" >patrocinio Minew</text>
 <rect x="908" y="725" width="784" height="24" fill="#f1f5f9"/>
-<text x="920" y="738" class="tdm" text-anchor="start" >J301</text>
-<text x="1010" y="738" class="td" text-anchor="start" >conector antena</text>
-<text x="1150" y="738" class="td" text-anchor="start" >BAT WIRELESS BWU.FL-IPEX1</text>
-<text x="1350" y="738" class="td" text-anchor="start" >SMD</text>
-<text x="1440" y="738" class="tdm" text-anchor="start" >C5137195</text>
-<text x="1530" y="738" class="td" text-anchor="start" >cajón #210</text>
-<text x="920" y="762" class="tdm" text-anchor="start" >R301 R304</text>
-<text x="1010" y="762" class="td" text-anchor="start" >0 Ω</text>
-<text x="1150" y="762" class="td" text-anchor="start" >Yageo RC0402FR-070RL</text>
-<text x="1350" y="762" class="td" text-anchor="start" >0402</text>
-<text x="1440" y="762" class="tdm" text-anchor="start" >C106231</text>
-<text x="1530" y="762" class="td" text-anchor="start" >cajón #10</text>
+<text x="920" y="738" class="tdm" text-anchor="start" >FB301</text>
+<text x="1010" y="738" class="td" text-anchor="start" >0 Ω (o ferrita)</text>
+<text x="1150" y="738" class="td" text-anchor="start" >0 Ω / FH CBW160808U601T</text>
+<text x="1350" y="738" class="td" text-anchor="start" >0603</text>
+<text x="1440" y="738" class="tdm" text-anchor="start" >C139183</text>
+<text x="1530" y="738" class="td" text-anchor="start" >#137 / ferrita #4</text>
+<text x="920" y="762" class="tdm" text-anchor="start" >C301</text>
+<text x="1010" y="762" class="td" text-anchor="start" >22 µF 10 V X7R</text>
+<text x="1150" y="762" class="td" text-anchor="start" >—</text>
+<text x="1350" y="762" class="td" text-anchor="start" >0603</text>
+<text x="1440" y="762" class="tdm" text-anchor="start" >—</text>
+<text x="1530" y="762" class="td" text-anchor="start" >cajón #146</text>
 <rect x="908" y="773" width="784" height="24" fill="#f1f5f9"/>
-<text x="920" y="786" class="tdm" text-anchor="start" >R302</text>
-<text x="1010" y="786" class="td" text-anchor="start" >0 Ω (DNP)</text>
-<text x="1150" y="786" class="td" text-anchor="start" >—</text>
+<text x="920" y="786" class="tdm" text-anchor="start" >C302</text>
+<text x="1010" y="786" class="td" text-anchor="start" >100 nF 16 V X7R</text>
+<text x="1150" y="786" class="td" text-anchor="start" >Samsung CL05B104KO5NNNC</text>
 <text x="1350" y="786" class="td" text-anchor="start" >0402</text>
-<text x="1440" y="786" class="tdm" text-anchor="start" >—</text>
-<text x="1530" y="786" class="td" text-anchor="start" >—</text>
-<text x="920" y="810" class="tdm" text-anchor="start" >R303</text>
-<text x="1010" y="810" class="td" text-anchor="start" >100 kΩ 1 %</text>
-<text x="1150" y="810" class="td" text-anchor="start" >Yageo RC0402FR-07100KL</text>
-<text x="1350" y="810" class="td" text-anchor="start" >0402</text>
-<text x="1440" y="810" class="tdm" text-anchor="start" >C60491</text>
-<text x="1530" y="810" class="td" text-anchor="start" >cajón #11</text>
-<rect x="908" y="821" width="784" height="24" fill="#f1f5f9"/>
-<text x="920" y="834" class="tdm" text-anchor="start" >C301</text>
-<text x="1010" y="834" class="td" text-anchor="start" >22 µF 10 V X7R</text>
-<text x="1150" y="834" class="td" text-anchor="start" >—</text>
-<text x="1350" y="834" class="td" text-anchor="start" >0603</text>
-<text x="1440" y="834" class="tdm" text-anchor="start" >—</text>
-<text x="1530" y="834" class="td" text-anchor="start" >cajón #146</text>
-<text x="920" y="858" class="tdm" text-anchor="start" >C302</text>
-<text x="1010" y="858" class="td" text-anchor="start" >100 nF 16 V X7R</text>
-<text x="1150" y="858" class="td" text-anchor="start" >Samsung CL05B104KO5NNNC</text>
-<text x="1350" y="858" class="td" text-anchor="start" >0402</text>
-<text x="1440" y="858" class="tdm" text-anchor="start" >C1525</text>
-<text x="1530" y="858" class="td" text-anchor="start" >cajón #22</text>
-<rect x="908" y="869" width="784" height="24" fill="#f1f5f9"/>
-<text x="920" y="882" class="tdm" text-anchor="start" >C303 C304</text>
-<text x="1010" y="882" class="td" text-anchor="start" >shunt π (DNP)</text>
-<text x="1150" y="882" class="td" text-anchor="start" >C0G según medida</text>
-<text x="1350" y="882" class="td" text-anchor="start" >0402</text>
-<text x="1440" y="882" class="tdm" text-anchor="start" >—</text>
-<text x="1530" y="882" class="td" text-anchor="start" >—</text>
-<rect x="20" y="854" width="860" height="126" rx="7" class="frame"/>
-<text x="32" y="874" class="ft" text-anchor="start" >Notas de colocación</text>
-<text x="36" y="894" class="ts" text-anchor="start" >• E22 a la derecha del ME54BS13: su SPI sale de los castellados 12-18 y va en superficie.</text>
-<text x="36" y="914" class="ts" text-anchor="start" >• Antena LoRa y antena BLE del módulo en cantos distintos; plano de GND sin cortes bajo el E22.</text>
-<text x="36" y="934" class="ts" text-anchor="start" >• Nada de pistas bajo el E22 salvo GND (manual §4.1).</text>
+<text x="1440" y="786" class="tdm" text-anchor="start" >C1525</text>
+<text x="1530" y="786" class="td" text-anchor="start" >cajón #22</text>
+<text x="920" y="810" class="tdm" text-anchor="start" >C303</text>
+<text x="1010" y="810" class="td" text-anchor="start" >10 µF 10 V X7R</text>
+<text x="1150" y="810" class="td" text-anchor="start" >—</text>
+<text x="1350" y="810" class="td" text-anchor="start" >0603</text>
+<text x="1440" y="810" class="tdm" text-anchor="start" >—</text>
+<text x="1530" y="810" class="td" text-anchor="start" >cajón #147</text>
+<text x="920" y="860" class="ts" text-anchor="start" >Todo del cajón; el módulo lo manda Minew. Antena 868 MHz con U.FL (IPEX1) aparte.</text>
+<text x="920" y="879" class="ts" text-anchor="start" >VDD_LORA = red local entre FB301 y la pata 8 (en la rev 0.1 la pata iba directa a 3V3).</text>
 </svg>

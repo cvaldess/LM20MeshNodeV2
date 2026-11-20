@@ -2,7 +2,8 @@
 
 BOM: "Designator","Qty","Manufacturer","Mfg Part #","Description/Value","Package/Footprint","LCSC Part #"
 CPL: Ref,Val,Package,PosX,PosY,Rot,Side (mm, mismas coordenadas absolutas que los Gerber).
-Fuera de los dos: piezas DNP, agujeros H* y puntos de test TP* (sólo cobre).
+Fuera de los dos: piezas DNP, agujeros H*, puntos de test TP* (sólo cobre) y las piezas A_MANO (no admiten
+reflujo: se sueldan con el soldador al final; su pasta sí va en la plantilla y estaña los pads).
 Las piezas sin MPN (genéricas del cajón) salen como «Generic» con su especificación; si aparece otra pieza
 sin MPN, el script se para.
 
@@ -31,9 +32,11 @@ GENERICAS = {
 TRADUCCION = {
     "LED azul": "Blue LED",
     "LED verde": "Green LED",
-    "82nH (activa)": "82nH (active GNSS antenna bias)",
+    "47nH (activa)": "47nH (active GNSS antenna bias)",
 }
 FUERA = re.compile(r"^(H|TP)\d+$")
+# rev 0.2: pila MS621FE-FL11E de respaldo del GNSS, SIN reflujo (Seiko: soldador ≤ 5 s, pila < 85 °C)
+A_MANO = {"BT401"}
 
 
 def natural(ref):
@@ -64,7 +67,7 @@ for f in filas_bom:
     if f["DNP"]:
         dnp += refs
         continue
-    refs = [r for r in refs if not FUERA.match(r)]
+    refs = [r for r in refs if not FUERA.match(r) and r not in A_MANO]
     if not refs:
         continue
     valor, huella = f["Value"], f["Footprint"]
@@ -95,7 +98,7 @@ with ruta_cpl.open("w", newline="", encoding="utf-8") as fh:
     w = csv.writer(fh)
     w.writerow(["Ref", "Val", "Package", "PosX", "PosY", "Rot", "Side"])
     for f in sorted(filas_pos, key=lambda f: natural(f["Ref"])):
-        if FUERA.match(f["Ref"]):
+        if FUERA.match(f["Ref"]) or f["Ref"] in A_MANO:
             continue
         refs_cpl.add(f["Ref"])
         w.writerow([f["Ref"], TRADUCCION.get(f["Val"], f["Val"]), f["Package"], f["PosX"], f["PosY"], f["Rot"],
@@ -106,6 +109,7 @@ solo_bom, solo_cpl = refs_bom - refs_cpl, refs_cpl - refs_bom
 print(f"BOM: {len(bom)} líneas, {len(refs_bom)} piezas -> {ruta_bom.relative_to(RAIZ)}")
 print(f"CPL: {len(refs_cpl)} piezas -> {ruta_cpl.relative_to(RAIZ)}")
 print("DNP fuera:", ", ".join(sorted(dnp, key=natural)))
+print("a mano (fuera):", ", ".join(sorted(A_MANO, key=natural)))
 print("sólo en BOM:", sorted(solo_bom) or "—", "| sólo en CPL:", sorted(solo_cpl) or "—")
 if solo_bom or solo_cpl:
     raise SystemExit("BOM y CPL no cuadran")

@@ -266,7 +266,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "0.1"
+      "sch_revision": "0.2"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -634,6 +634,10 @@
       {
         "netclass": "USB90",
         "pattern": "/USB_DM"
+      },
+      {
+        "netclass": "POT",
+        "pattern": "/03_lora/VDD_LORA"
       }
     ]
   },

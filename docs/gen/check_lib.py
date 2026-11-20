@@ -17,6 +17,7 @@ PAIRS = [("ME54BS13", MESH, "ME54BS13"), ("E22-900MM22S", MESH, "E22-xxxMM22S"),
          ("HS91L02W2C01", EASY, "OLED-TH_L38.0-W12.0_HS91L02W2C01"), ("BWU.FL-IPEX1", EASY, "IPEX-SMD_BWIPX-1-001E"),
          ("KH-TYPE-C-16P", EASY, "USB-C-SMD_KH-TYPE-C-16P"), ("TPD4E05U06DQAR", EASY, "DFN2510-10_L2.5-W1.0-P0.50-BL"),
          ("HYG-5020A", EASY, "BUZ-SMD_3P-L5.0-W5.0-P3.50-BL"),
+         ("MS21SF1", MESH, "MS21SF1"), ("ME31GR02", MESH, "ME31GR02"),  # rev 0.2 (Minew, 20-11-2026)
          # (biblioteca de símbolos, símbolo, huellas, huella): símbolo estándar de KiCad con huella de easyeda2kicad
          (KSYM + "/Sensor_Motion.kicad_sym", "LSM6DS3", EASY, "LGA-14_L3.0-W2.5-P0.50-TL"),
          (KSYM + "/Connector_Generic_MountingPin.kicad_sym", "Conn_01x04_MountingPin", MESH,

@@ -19,7 +19,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
 PROY = "nrflm20-meshnode"
-REV = "rev0.1"
+REV = "rev0.2"
 KICAD_CLI = r"C:\Program Files\KiCad\10.0\bin\kicad-cli.exe"
 CAPAS = "F.Cu,In1.Cu,In2.Cu,B.Cu,F.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts"
 EN_ZIP = {".gtl", ".g1", ".g2", ".gbl", ".gtp", ".gto", ".gbo", ".gts", ".gbs", ".gm1", ".drl", ".ipc"}

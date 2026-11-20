@@ -1,6 +1,7 @@
 """Pin lists (number, name, electrical type, side) for the project symbols in libs/meshnode.kicad_sym,
 written from each datasheet's pin table. Prints JSON ready for Konnect create_symbol.
-Usage: python simbolos_lib.py <SYMBOL>  (ME54BS13 | E22-900MM22S | E108-GN04S | nPM1300 | SHT41 | OLED | UFL | USBC | TPD4E05 | HYG5020A)
+Usage: python simbolos_lib.py <SYMBOL>  (ME54BS13 | E22-900MM22S | E108-GN04S | nPM1300 | SHT41 | OLED | UFL | USBC | TPD4E05 | HYG5020A |
+        MS21SF1 | ME31GR02)
 
 Sources:
   ME54BS13      Minew datasheet v1.0.0 p.6-9 + nRF54LM20A datasheet v1.0 table p.1240 (AIN, NFC, clock pins "/CK")
@@ -92,6 +93,29 @@ def e108():
     return simple(left, right, x=15.24)
 
 
+def ms21sf1():
+    """MinewSemi MS21SF1 (SX1262) datasheet K §4 + vendor MS21SF1_V1.1.SchLib (V1.0 had 2 ANT_SW1, 3 DIO2,
+    14 ANT_SW2; V1.1 = datasheet: all three NC, RF switch driven by DIO2 inside). U.FL on the module in
+    parallel with pad 16 ANT."""
+    left = [("8", "VDD", "power_in"), None, ("9", "SX_NRESET", "input"), None, ("13", "NSS", "input"),
+            ("12", "SCK", "input"), ("11", "MOSI", "input"), ("10", "MISO", "tri_state"), None,
+            ("1", "GND", "power_in"), ("7", "GND", "power_in"), ("15", "GND", "power_in")]
+    right = [("16", "ANT", "passive"), None, ("6", "BUSY", "output"), ("4", "DIO1", "bidirectional"),
+             ("5", "DIO3", "bidirectional"), None, ("2", "NC", "no_connect"), ("3", "NC", "no_connect"),
+             ("14", "NC", "no_connect")]
+    return simple(left, right)
+
+
+def me31gr02():
+    """MinewSemi ME31GR02 datasheet §4.1 (LCC-18, Beken BK1661). RESET: internal pull-up (Minew, 20-11-2026)."""
+    left = [("8", "VCC", "power_in"), ("6", "V_BCKP", "power_in"), None, ("3", "RXD", "input"),
+            ("2", "TXD", "output"), None, ("9", "RESET", "input"), ("4", "PPS", "output"), None,
+            ("1", "GND", "power_in"), ("10", "GND", "power_in"), ("12", "GND", "power_in")]
+    right = [("11", "RF_IN", "passive"), ("14", "VCC_RF", "power_out"), None] + \
+            [(n, "NC", "no_connect") for n in ("5", "7", "13", "15", "16", "17", "18")]
+    return simple(left, right, x=15.24)
+
+
 def npm1300():
     left = [("21", "VBUS", "power_in"), ("22", "VBUSOUT", "power_out"), ("23", "CC1", "passive"),
             ("24", "CC2", "passive"), None, ("19", "VBAT", "passive"), ("18", "NTC", "passive"), None,
@@ -154,7 +178,8 @@ def hyg5020a():
 
 
 SYMBOLS = {"ME54BS13": me54bs13, "E22-900MM22S": e22, "E108-GN04S": e108, "nPM1300": npm1300,
-           "SHT41": sht41, "OLED": oled, "UFL": ufl, "USBC": usbc, "TPD4E05": tpd4e05, "HYG5020A": hyg5020a}
+           "SHT41": sht41, "OLED": oled, "UFL": ufl, "USBC": usbc, "TPD4E05": tpd4e05, "HYG5020A": hyg5020a,
+           "MS21SF1": ms21sf1, "ME31GR02": me31gr02}
 
 if __name__ == "__main__":
     pins = SYMBOLS[sys.argv[1]]()

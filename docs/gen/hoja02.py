@@ -17,8 +17,6 @@ MAPA = {
     "LORA_BUSY": ("P1.19", "sig", "GPIO entrada · castellado 14"),
     "LORA_DIO1": ("P1.23", "sig", "GPIOTE20 (IRQ) · castellado 13"),
     "LORA_NRST": ("P1.26", "sig", "GPIO · castellado 12"),
-    "LORA_RXEN": ("P1.13", "sig", "GPIO (RadioLib RXEN)"),
-    "LORA_TXEN": ("P1.12", "sig", "GPIO opcional (R302 DNP)"),
     "I2C_SDA": ("P0.03", "sig", "TWIM30 SDA (como la DK)"),
     "I2C_SCL": ("P0.04", "sig", "TWIM30 SCL (clock pin)"),
     "IMU_INT1": ("P0.02", "sig", "GPIOTE30 ← INT1 del LSM6DS3TR-C"),
@@ -26,7 +24,7 @@ MAPA = {
     "GNSS_TX": ("P1.03", "sig", "UARTE20 TXD → RXD del GNSS"),
     "GNSS_RX": ("P1.29", "sig", "UARTE20 RXD ← TXD del GNSS"),
     "GNSS_PPS": ("P1.04", "sig", "GPIOTE20 (PIN_GPS_PPS)"),
-    "GNSS_RST": ("P1.00", "sig", "salida en drenador abierto"),
+    "GNSS_RST": ("P1.00", "sig", "sólo por R405 0 Ω DNP (RESET del GNSS al aire)"),
     "GNSS_EN": ("P1.05", "sig", "→ GPIO0 del nPM1300 (PIN_GPS_EN)"),
     "PMIC_INT": ("P1.06", "sig", "GPIOTE20 ← GPIO1 del nPM1300"),
     "VBAT_SENSE": ("P1.30", "sig", "AIN2 (BATTERY_PIN)"),
@@ -45,7 +43,7 @@ NET_OF_PORT = {p: (n, k) for n, (p, k, _) in MAPA.items()}
 def dibujar():
     W, H = 1720, 1340
     nueva(W, H, "02 · MCU — ME54BS13 (nRF54LM20A)",
-          "nrf54lm20-meshnode · hoja 2 · referencias 2xx · intención de 02_mcu.kicad_sch · mapa de pines elegido por mí (revisar con las huellas en el PCB)")
+          "nrf54lm20-meshnode rev 0.2 · hoja 2 · referencias 2xx · intención de 02_mcu.kicad_sch · mapa de pines mío")
     leyenda(760, 40)
 
     # ---------------------------------------------------------------- A · módulo
@@ -132,7 +130,7 @@ def dibujar():
     notes(856, 1262, [
         "Reglas del nRF54LM20A: SERIAL2x sólo en P1/P3, SERIAL30 en P0, SERIAL00 en P2; IRQ y SENSE sólo en P0/P1/P3;",
         "SCK/SCL en clock pins. LoRa: SPIM22 (como la DK) · GNSS: UARTE20 · I²C: TWIM30 · depuración: UARTE00.",
-        ("E22 con cristal pasivo ⇒ la variante NO define SX126X_DIO3_TCXO_VOLTAGE.", "tw")], dy=18)
+        ("MS21SF1: cristal pasivo y conmutador por DIO2 ⇒ variante sin SX126X_DIO3_TCXO_VOLTAGE ni RXEN/TXEN (P1.12/P1.13 libres).", "tw")], dy=18)
     guardar(OUT)
 
 

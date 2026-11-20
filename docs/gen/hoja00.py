@@ -9,11 +9,11 @@ OUT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 
 def dibujar():
     W, H = 1720, 1240
-    nueva(W, H, "00 · nrf54lm20-meshnode — diagrama de bloques",
+    nueva(W, H, "00 · nrf54lm20-meshnode rev 0.2 — diagrama de bloques",
           "Nodo Meshtastic de bolsillo: nRF54LM20A (BLE al móvil) + LoRa 868 + GNSS + OLED · LiPo 1S · USB-C · 4 capas")
     for i, (c, t) in enumerate((("pw", "alimentación"), ("sg", "señales"), ("df", "USB"), ("rf", "RF 50 Ω"),
                                 ("gn", "conmutada por firmware"))):
-        x = 960 + i * 150
+        x = 900 + i * 150
         P([(x, 40), (x + 34, 40)], c); T(x + 40, 44, t, "ts")
 
     # ---------------------------------------------------------------- bloques
@@ -27,10 +27,11 @@ def dibujar():
                                                    "BLE 6.0 antena PCB (al canto)", "USB 2.0 HS nativo (CDC/UF2)",
                                                    "SPIM22 · UARTE20 · TWIM30", "SWD J201 2×5 · UART TP201/202",
                                                    "VBAT_SENSE → AIN2", "π FB201 en VCC", "hoja 02"])
-    blk(1130, 110, 260, 150, "LoRa E22-900MM22S  U301", ["SX1262 · 22 dBm · cristal pasivo",
-                                                         "RXEN por MCU, TXEN = DIO2", "π + U.FL J301", "hoja 03"], "blkr")
-    blk(1130, 330, 260, 150, "GNSS E108-GN04S  U401", ["BDS/GPS/GLO/GAL · 25 mA", "UART 38400 · PPS",
-                                                       "U.FL J401 activa/pasiva", "hoja 04"], "blkg")
+    blk(1130, 110, 260, 150, "LoRa MS21SF1  U301", ["SX1262 · 22 dBm · cristal pasivo",
+                                                    "conmutador de RF interno (DIO2)", "U.FL del propio módulo",
+                                                    "hoja 03"], "blkr")
+    blk(1130, 330, 260, 150, "GNSS ME31GR02  U401", ["Beken BK1661 · L1 · 17,5–19 mA", "UART 115200 · PPS",
+                                                     "U.FL J401 activa/pasiva", "hoja 04"], "blkg")
     blk(1130, 560, 260, 165, "Interfaz", ["SHT41 U501 (0x44) · OLED DS501 (0x3C)",
                                           "IMU U502 (0x6A): despertar al moverlo",
                                           "Qwiic J501 · botones ↑ OK ↓ · LED D501",
@@ -50,8 +51,8 @@ def dibujar():
     P([(600, 250), (1100, 250)], "gn"); T(860, 242, "V_GNSS (BUCK1 ⇐ PIN_GPS_EN)", "al", "middle")
     P([(1100, 250), (1100, 380)], "gn"); arrow([(1100, 380), (1130, 380)], "gn")
     arrow([(1000, 510), (1060, 510), (1060, 205), (1130, 205)], "sg"); T(1052, 300, "SPI · BUSY", "al", "end")
-    T(1052, 314, "DIO1 · NRST", "al", "end"); T(1052, 328, "RXEN", "al", "end")
-    arrow([(1000, 560), (1110, 560), (1110, 440), (1130, 440)], "sg"); T(1050, 552, "UART · PPS · RST", "al", "middle")
+    T(1052, 314, "DIO1 · NRST", "al", "end")
+    arrow([(1000, 560), (1110, 560), (1110, 440), (1130, 440)], "sg"); T(1050, 552, "UART · PPS", "al", "middle")
     arrow([(1000, 640), (1130, 640)], "sg"); T(1065, 632, "I²C · GPIO", "al", "middle")
     arrow([(700, 700), (460, 700), (460, 410)], "sg"); T(580, 692, "I²C · PMIC_INT · GNSS_EN", "al", "middle")
     arrow([(1390, 180), (1480, 180)], "rf"); arrow([(1390, 400), (1480, 400)], "rf")
@@ -60,11 +61,12 @@ def dibujar():
     # ---------------------------------------------------------------- matriz de estados de alimentación
     frame(40, 880, 820, 340, "Matriz de estados de alimentación (¿quién queda apagado con otro vivo y qué los une?)")
     tabla(40, 920, 820, [56, 250, 470], ["Estado", "Líneas entre dominios", "Riesgo y quién lo resuelve"], [
-        ("GNSS apagado (BUCK1 off)", "TX MCU→RXD (R402 1k), RX, PPS, RST", "TX alto alimentaría el GNSS por su ESD ⇒ FIRMWARE: TX a 0/entrada"),
-        ("", "V_BCKP desde 3V3 (R401 1k)", "deseado: RTC y efemérides vivos"),
+        ("GNSS apagado (BUCK1 off)", "TX MCU→RXD (R402 1k), RX, PPS", "TX alto lo alimenta por su ESD ⇒ FIRMWARE: TX a entrada + pull-down"),
+        ("", "V_BCKP (pila BT401) · RESET al aire", "deseado: RTC y efemérides vivos · R405 DNP"),
         ("OLED / SHT41 / IMU / Qwiic", "I²C con pull-ups propios", "siempre en 3V3 ⇒ no hay estado parcial (HARDWARE)"),
-        ("E22 (en 3V3 siempre)", "SPI, BUSY, DIO1, NRST, RXEN", "mismo raíl que el MCU ⇒ sin riesgo"),
+        ("MS21SF1 (en 3V3 siempre)", "SPI, BUSY, DIO1, NRST", "mismo raíl que el MCU ⇒ sin riesgo"),
         ("Ship mode / batería a 0", "todo apagado salvo nPM1300", "370 nA; sale con SW101 o al enchufar USB"),
+        ("", "V_BCKP del GNSS desde BT401", "D401 aísla la pila del 3V3 apagado (HARDWARE)"),
         ("Sólo USB, sin batería", "VBUS límite 100 mA por defecto", "TX LoRa o zumbador > 100 mA ⇒ FIRMWARE: 500 mA"),
         ("USB sin firmware de PMIC", "VBUS_MCU (VBUSOUT) al módulo", "USB CDC funciona; no carga hasta el driver"),
     ], dy=24, mono=())
@@ -72,12 +74,12 @@ def dibujar():
     # ---------------------------------------------------------------- presupuesto y hojas
     frame(880, 880, 800, 340, "Consumo orientativo (3V3 desde LiPo) y hojas")
     tabla(880, 920, 800, [896, 1090, 1210], ["Consumidor", "Corriente", "Nota"], [
-        ("E22 en RX continua", "≈ 7 mA", "Meshtastic escucha siempre (manual E22 §2.2)"),
-        ("E22 en TX 22 dBm", "100–140 mA", "ráfagas; C301 22 µF + BUCK2"),
+        ("MS21SF1 en RX continua", "≈ 4,8 mA", "Meshtastic escucha siempre (datasheet p. 9)"),
+        ("MS21SF1 en TX 22 dBm", "112–123 mA", "ráfagas; C301 22 µF + BUCK2"),
         ("nRF54LM20A + BLE", "≈ 1–3 mA medio", "conexión BLE con el móvil"),
-        ("GNSS seguimiento", "25–27 mA", "conmutado por PIN_GPS_EN (BUCK1)"),
+        ("GNSS seguimiento", "17,5–19 mA", "conmutado por PIN_GPS_EN (BUCK1)"),
         ("OLED encendido", "10–23 mA", "se apaga por timeout (sleep ~3 µA)"),
-        ("⇒ 1500 mAh", "≈ 7 días sin GNSS", "≈ 1,7 días con GNSS siempre encendido"),
+        ("⇒ 1500 mAh", "≈ 9 días sin GNSS", "≈ 2,5 días con GNSS siempre encendido"),
     ], dy=22, mono=())
     notes(896, 1090, ["Hojas: 00 bloques (raíz) · 01 alimentación · 02 MCU · 03 LoRa · 04 GNSS · 05 interfaz.",
                       "Entre hojas: etiquetas jerárquicas (azul). Alimentación: símbolos globales GND, 3V3, VSYS,",

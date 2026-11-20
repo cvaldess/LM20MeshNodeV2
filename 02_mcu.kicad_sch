@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "nRF54LM20-MeshNode")
-		(date "2026-11-09")
-		(rev "0.1")
+		(date "2026-11-20")
+		(rev "0.2")
 		(company "CValdesS.com")
 	)
 	(lib_symbols
@@ -2822,6 +2822,10 @@
 		(uuid "52bb54e0-ed53-4a60-a50c-fd636c2f8eb0")
 	)
 	(no_connect
+		(at 127 81.28)
+		(uuid "5308de25-bcf1-4cf7-8fe9-483122d7325c")
+	)
+	(no_connect
 		(at 76.2 121.92)
 		(uuid "59313faf-525d-4dac-bd4e-e6c0bc45b0e2")
 	)
@@ -2832,6 +2836,10 @@
 	(no_connect
 		(at 236.22 129.54)
 		(uuid "671d1303-72a9-459e-9a27-8dd107dd45b4")
+	)
+	(no_connect
+		(at 127 83.82)
+		(uuid "6873cf7b-2e6f-47e6-b605-338a60d27c89")
 	)
 	(no_connect
 		(at 127 106.68)
@@ -3563,17 +3571,6 @@
 		)
 		(uuid "3d691855-ddc7-4a45-a1fa-b32dc9a8e29b")
 	)
-	(hierarchical_label "LORA_TXEN"
-		(shape output)
-		(at 127 81.28 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3e51edfe-cfe2-4c43-80d7-42777c161ea1")
-	)
 	(hierarchical_label "LORA_DIO1"
 		(shape input)
 		(at 127 104.14 0)
@@ -3617,17 +3614,6 @@
 			(justify left)
 		)
 		(uuid "47ab4f4d-8b92-4a52-8526-8806ce44e5e1")
-	)
-	(hierarchical_label "LORA_RXEN"
-		(shape output)
-		(at 127 83.82 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4bd00358-d7d6-4875-a052-99e15be30ca0")
 	)
 	(hierarchical_label "VBUS_MCU"
 		(shape input)

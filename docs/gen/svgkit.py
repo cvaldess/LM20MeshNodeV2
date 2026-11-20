@@ -94,6 +94,24 @@ def diode_v(x, y, ref, val, L=50, side="r", kind="d"):
     _side(x, m, ref, val, side, 14)
 
 
+def diode_h(x, y, ref, val, L=60):
+    """Diodo horizontal: ánodo a la IZQUIERDA (x), cátodo a la derecha (x+L)."""
+    m = x + L / 2
+    P([(x, y), (m - 7, y)]); P([(m + 7, y), (x + L, y)])
+    add(f'<path d="M{m-7},{y-8} L{m-7},{y+8} L{m+7},{y} Z" class="sym"/>')
+    P([(m + 7, y - 8), (m + 7, y + 8)], "plate")
+    T(m, y - 13, f"{ref} {val}", "ref", "middle")
+
+
+def bat_v(x, y, ref, val, L=50, side="r"):
+    """Pila de una celda vertical: + ARRIBA (x, y), − abajo (x, y+L)."""
+    m = y + L / 2
+    P([(x, y), (x, m - 3)]); P([(x, m + 3), (x, y + L)])
+    P([(x - 11, m - 3), (x + 11, m - 3)], "w"); P([(x - 6, m + 3), (x + 6, m + 3)], "plate")
+    T(x + (8 if side == "l" else -8), m - 7, "+", "pn", "start" if side == "l" else "end")
+    _side(x, m, ref, val, side, 15)
+
+
 def led_v(x, y, ref, val, L=44, side="r"):
     """LED vertical: ánodo arriba, cátodo abajo."""
     m = y + L / 2

@@ -24,6 +24,12 @@ for z in list(b.Zones()):
 zonas = sorted(z.GetZoneName() for z in b.Zones() if not z.GetIsRuleArea())
 assert zonas == ["3V3_In2", "GND_In1"], zonas
 print("rellenos exteriores quitados de la copia:", [z.GetZoneName() for z in quitadas])
+# rev 0.2: áreas MINEW_* (keepout_minew.py) bajo los módulos Minew. En la placa sólo prohíben pistas (él pone vías GND
+# ahí); en la copia también vías, para que Freerouting no meta vías de señal bajo el cuerpo.
+minew = [z for z in b.Zones() if z.GetIsRuleArea() and z.GetZoneName().startswith("MINEW_")]
+for z in minew:
+    z.SetDoNotAllowVias(True)
+print("áreas Minew (sin pistas ni vías en el DSN):", sorted(z.GetZoneName() for z in minew))
 b.SetLayerType(pcbnew.In1_Cu, pcbnew.LT_POWER)
 b.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_POWER)
 n_bloq = 0

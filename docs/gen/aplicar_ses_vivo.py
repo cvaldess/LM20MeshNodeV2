@@ -39,12 +39,31 @@ for i in items:
         t.layer = CAPA[i["capa"]]
         t.net = nets[i["red"]]
         nuevas.append(t)
-c = b.begin_commit()
+# 20-11-2026: con esquema Y placa abiertos, KiCad rechaza BeginCommit sin documento («not allowed when multiple
+# editors are open») y el kipy instalado no deja indicarlo ⇒ una sola llamada create_items (también = un Ctrl+Z).
 try:
+    c = b.begin_commit()
+except Exception as e:
+    print("sin commit (", str(e)[:80], ") ⇒ una sola llamada create_items")
+    c = None
+if c is None:
     b.create_items(nuevas)
-except Exception:
-    b.drop_commit(c)
-    raise
-b.push_commit(c, "Ruteo de Freerouting (ses_mesh.py + aplicar_ses_vivo.py)")
+else:
+    try:
+        b.create_items(nuevas)
+    except Exception:
+        b.drop_commit(c)
+        raise
+    b.push_commit(c, "Ruteo de Freerouting (ses_mesh.py + aplicar_ses_vivo.py)")
 b.refill_zones()
-print("en vivo:", len(nuevas), "objetos creados · ahora", len(list(b.get_tracks())), "tramos,", len(list(b.get_vias())), "vías")
+# el relleno sigue en curso y KiCad responde «busy» un rato (20-11-2026): reintentar el recuento
+import time  # noqa: E402
+for _ in range(60):
+    try:
+        print("en vivo:", len(nuevas), "objetos creados · ahora", len(list(b.get_tracks())), "tramos,",
+              len(list(b.get_vias())), "vías")
+        break
+    except Exception as e:
+        if "busy" not in str(e):
+            raise
+        time.sleep(1)

@@ -56,6 +56,8 @@ PARTS = {
     "10u": (C0603, {"Description": "10 µF 10 V X7R 0603 (cajón #147)"}),
     "22u": (C0603, {"Description": "22 µF 10 V X7R 0603 (cajón #146)"}),
     "56p": (C0402, {"LCSC Part": "C84707", "MPN": "CL05C560JB5NNNC", "Manufacturer": "Samsung"}),
+    "47p": (C0402, {"LCSC Part": "C42563629", "MPN": "0402CG470F500NT", "Manufacturer": "FH",
+                    "Description": "47 pF ±1 % 50 V C0G 0402 (cajón #208)"}),
     "0R": (R0402, {"LCSC Part": "C106231", "MPN": "RC0402FR-070RL", "Manufacturer": "Yageo"}),
     "1M": (R0402, {"LCSC Part": "C138033", "MPN": "RC0402FR-071ML", "Manufacturer": "Yageo"}),
     "330k": (R0402, {"LCSC Part": "C137882", "MPN": "RC0402JR-07330KL", "Manufacturer": "Yageo"}),
@@ -261,8 +263,7 @@ def hoja02():
     out_ = {"VBUS_MCU": "input", "USB_DP": "bidirectional", "USB_DM": "bidirectional", "I2C_SDA": "bidirectional",
             "I2C_SCL": "bidirectional", "GNSS_EN": "output", "PMIC_INT": "input", "VBAT_SENSE": "input",
             "LORA_SCK": "output", "LORA_MOSI": "output", "LORA_MISO": "input", "LORA_NSS": "output",
-            "LORA_BUSY": "input", "LORA_DIO1": "input", "LORA_NRST": "output", "LORA_RXEN": "output",
-            "LORA_TXEN": "output", "GNSS_TX": "output", "GNSS_RX": "input", "GNSS_PPS": "input", "GNSS_RST": "output",
+            "LORA_BUSY": "input", "LORA_DIO1": "input", "LORA_NRST": "output", "GNSS_TX": "output", "GNSS_RX": "input", "GNSS_PPS": "input", "GNSS_RST": "output",
             "IMU_INT1": "input", "IMU_INT2": "input", "BTN_UP": "input", "BTN_OK": "input", "BTN_DOWN": "input",
             "BUZZER": "output", "LED_STAT": "output"}
     P = Plan("02", out_)
@@ -311,60 +312,74 @@ UFL_FP = "easyeda2kicad:IPEX-SMD_BWIPX-1-001E"
 
 # ====================================================================================================== hoja 03
 def hoja03():
+    """Rev 0.2 (20-11-2026): MinewSemi MS21SF1-SX1262 (conmutador de RF por DIO2 y U.FL dentro del módulo) +
+    π de Minew en VDD. Fuera J301, R301-R304, C304, LORA_RXEN y LORA_TXEN. Intención: docs/03_lora.svg."""
     P = Plan("03", {"LORA_SCK": "input", "LORA_MOSI": "input", "LORA_MISO": "output", "LORA_NSS": "input",
-                    "LORA_BUSY": "output", "LORA_DIO1": "output", "LORA_NRST": "input", "LORA_RXEN": "input",
-                    "LORA_TXEN": "input"})
-    P.place("U301", "meshnode:E22-900MM22S", g(40), g(36), 0, "E22-900MM22S", "meshnode:E22-xxxMM22S",
-            {"1": "3V3", "3": "LORA_NRST", "14": "LORA_NSS", "15": "LORA_SCK", "13": "LORA_MOSI", "12": "LORA_MISO",
-             "2": "GND", "7": "GND", "16": "GND", "6": "LORA_ANT", "9": "TXEN", "10": "LORA_RXEN", "11": "LORA_BUSY",
-             "20": "LORA_DIO1", "19": "DIO2", "18": "NC", "4": "NC", "5": "NC", "8": "NC", "17": "NC"},
-            **{"MPN": "E22-900MM22S", "Manufacturer": "Ebyte",
-               "Datasheet": DS + "E22-M+Series+Module_UserManual_EN.pdf"})
+                    "LORA_BUSY": "output", "LORA_DIO1": "output", "LORA_NRST": "input"})
+    P.place("U301", "meshnode:MS21SF1", g(40), g(36), 0, "MS21SF1-SX1262", "meshnode:MS21SF1",
+            {"8": "VDD_LORA", "9": "LORA_NRST", "13": "LORA_NSS", "12": "LORA_SCK", "11": "LORA_MOSI",
+             "10": "LORA_MISO", "1": "GND", "7": "GND", "15": "GND", "16": "NC", "6": "LORA_BUSY", "4": "LORA_DIO1",
+             "5": "NC", "2": "NC", "3": "NC", "14": "NC"},
+            **{"MPN": "MS21SF1-SX1262", "Manufacturer": "MinewSemi",
+               "Datasheet": DS + "MS21SF1-SX1262,LLCC68_Datasheet_K_EN.pdf",
+               "Description": "LoRa SX1262 22 dBm, cristal pasivo, conmutador RF por DIO2, U.FL propio (pata 16 sin pista)"})
     X1, Y0, DY = g(80), g(24), 7.62
-    P.two("R301", "Device:R", X1, Y0, "0R", "DIO2", "TXEN")
-    P.two("R302", "Device:R", X1, Y0 + DY, "0R", "LORA_TXEN", "TXEN", value="0R DNP")
-    P.two("R303", "Device:R", X1, Y0 + 2 * DY, "100k", "LORA_RXEN", "GND")
-    P.two("C303", "Device:C", X1, Y0 + 4 * DY, "56p", "LORA_ANT", "GND", value="DNP",
-          **{"LCSC Part": "", "MPN": "", "Manufacturer": "", "Description": "shunt de la π, C0G según medida (DNP)"})
-    P.two("R304", "Device:R", X1, Y0 + 5 * DY, "0R", "LORA_ANT", "LORA_RF")
-    P.two("C304", "Device:C", X1, Y0 + 6 * DY, "56p", "LORA_RF", "GND", value="DNP",
-          **{"LCSC Part": "", "MPN": "", "Manufacturer": "", "Description": "shunt de la π, C0G según medida (DNP)"})
-    P.two("C301", "Device:C", X1, Y0 + 8 * DY, "22u", "3V3", "GND", value="22u 10V")
-    P.two("C302", "Device:C", X1, Y0 + 9 * DY, "100n", "3V3", "GND")
-    P.place("J301", "meshnode:BWU.FL-IPEX1", g(110), g(30), 0, "U.FL LoRa", UFL_FP,
-            {"1": "LORA_RF", "2": "GND", "3": "GND"}, **UFL)
+    P.two("C303", "Device:C", X1, Y0, "10u", "3V3", "GND", value="10u 10V")
+    P.two("FB301", "Device:R", X1, Y0 + DY, "0R", "3V3", "VDD_LORA", fp=R0603, value="0R",
+          **{"LCSC Part": "", "MPN": "", "Manufacturer": "",
+             "Description": "0 Ω 0603 (cajón #137) o ferrita FH CBW160808U601T 600 Ω@100 MHz (C139183, cajón #4)"})
+    P.two("C301", "Device:C", X1, Y0 + 2 * DY, "22u", "VDD_LORA", "GND", value="22u 10V")
+    P.two("C302", "Device:C", X1, Y0 + 3 * DY, "100n", "VDD_LORA", "GND")
     P.rails_at(g(80), g(80))
+    P.flag("VDD_LORA")
+    P.text(g(13), g(18), "A · MS21SF1-SX1262 (cristal pasivo: la variante NO define SX126X_DIO3_TCXO_VOLTAGE; "
+                         "conmutador RF por DIO2: sin RXEN/TXEN · pata 16 ANT sin pista, antena al U.FL del módulo)   "
+                         "B · π de Minew en VDD (FB301 0 Ω o ferrita) · docs/03_lora.svg")
     return P
 
 
 # ====================================================================================================== hoja 04
 def hoja04():
+    """Rev 0.2 (20-11-2026): MinewSemi ME31GR02 (Beken BK1661) según su referencia §5.1 + pila de respaldo
+    MS621FE en V_BCKP. Intención: docs/04_gnss.svg."""
     P = Plan("04", {"GNSS_TX": "input", "GNSS_RX": "output", "GNSS_PPS": "output", "GNSS_RST": "input"})
-    nets = {"23": "V_GNSS", "22": "V_BCKP", "21": "GNSS_RXD", "20": "GNSS_TXD", "8": "GNSS_RST", "2": "SAFEBOOT",
-            "4": "NC", "3": "GNSS_PPS", "10": "GND", "12": "GND", "13": "GND", "24": "GND", "11": "GNSS_RFIN",
-            "9": "VCC_RF", "14": "NC"}
-    nets.update({n: "NC" for n in ("1", "5", "6", "7", "15", "16", "17", "18", "19")})
-    P.place("U401", "meshnode:E108-GN04S", g(40), g(36), 0, "E108-GN04S", "meshnode:E108-GN04S", nets,
-            **{"MPN": "E108-GN04S", "Manufacturer": "Ebyte", "Datasheet": DS + "E108-GN04+Series_UserManual_EN_V1.3.pdf"})
+    nets = {"8": "V_GNSS", "6": "V_BCKP", "3": "GNSS_RXD", "2": "GNSS_TXD", "9": "GNSS_RESET", "4": "GNSS_PPS",
+            "1": "GND", "10": "GND", "12": "GND", "11": "GNSS_RFIN", "14": "VCC_RF"}
+    nets.update({n: "NC" for n in ("5", "7", "13", "15", "16", "17", "18")})
+    P.place("U401", "meshnode:ME31GR02", g(40), g(36), 0, "ME31GR02", "meshnode:ME31GR02", nets,
+            **{"MPN": "ME31GR02", "Manufacturer": "MinewSemi", "Datasheet": DS + "ME31GR02_Datasheet_EN.pdf",
+               "Description": "GNSS L1 (GPS/BDS/GLONASS/Galileo/QZSS), Beken BK1661, UART 115200, LCC-18"})
     X1, Y0, DY = g(80), g(24), 7.62
     P.two("R402", "Device:R", X1, Y0, "1k", "GNSS_TX", "GNSS_RXD")
     P.two("R403", "Device:R", X1, Y0 + DY, "1k", "GNSS_RX", "GNSS_TXD")
-    P.two("R401", "Device:R", X1, Y0 + 3 * DY, "1k", "3V3", "V_BCKP")
-    P.two("C403", "Device:C", X1, Y0 + 4 * DY, "100n", "V_BCKP", "GND")
-    P.two("C401", "Device:C", X1, Y0 + 6 * DY, "10u", "V_GNSS", "GND", value="10u 10V")
-    P.two("C402", "Device:C", X1, Y0 + 7 * DY, "100n", "V_GNSS", "GND")
-    P.two("R404", "Device:R", X1, Y0 + 8 * DY, "0R", "3V3", "V_GNSS", value="0R DNP")
+    P.two("R405", "Device:R", X1, Y0 + 2 * DY, "0R", "GNSS_RST", "GNSS_RESET", value="0R DNP")
+    P.place("D401", "Device:D", X1, Y0 + 4 * DY, 0, "BAT54WS", "Diode_SMD:D_SOD-323", {"1": "BCKP_D", "2": "3V3"},
+            **{"LCSC Part": "C124205", "MPN": "BAT54WS-7-F", "Manufacturer": "Diodes Incorporated",
+               "Description": "Schottky de baja fuga: impide que BT401 alimente el 3V3 apagado"})
+    P.two("R401", "Device:R", X1, Y0 + 5 * DY, "1k", "BCKP_D", "V_BCKP")
+    P.two("C403", "Device:C", X1, Y0 + 6 * DY, "100n", "V_BCKP", "GND")
+    P.two("C401", "Device:C", X1, Y0 + 8 * DY, "10u", "V_GNSS", "GND", value="10u 10V")
+    P.two("C402", "Device:C", X1, Y0 + 9 * DY, "100n", "V_GNSS", "GND")
+    P.two("R404", "Device:R", X1, Y0 + 10 * DY, "0R", "3V3", "V_GNSS", value="0R DNP")
     X2 = g(110)
-    P.two("C404", "Device:C", X2, Y0, "56p", "GNSS_ANT", "GNSS_RFIN", value="56p C0G",
-          **{"Datasheet": ""})
-    P.two("L401", "Device:L", X2, Y0 + DY, "82n", "GNSS_ANT", "VCC_RF", fp="Inductor_SMD:L_0402_1005Metric",
-          value="82nH (activa)", **{"LCSC Part": "C98002", "MPN": "LQG15HS82NJ02D", "Manufacturer": "Murata",
-                                   "Description": "sólo con antena GNSS activa"})
+    P.two("L401", "Device:L", X2, Y0, "47n", "GNSS_RFIN", "VCC_RF", fp="Inductor_SMD:L_0402_1005Metric",
+          value="47nH (activa)", **{"LCSC Part": "C192855", "MPN": "LQW15AN47NJ00D", "Manufacturer": "Murata",
+                                   "Description": "47 nH 0402 (cajón #207): alimenta una antena GNSS activa"})
+    P.two("C404", "Device:C", X2, Y0 + DY, "47p", "VCC_RF", "GND", value="47p C0G")
     P.place("J401", "meshnode:BWU.FL-IPEX1", X2, Y0 + 4 * DY, 0, "U.FL GNSS", UFL_FP,
-            {"1": "GNSS_ANT", "2": "GND", "3": "GND"}, **UFL)
-    P.place("TP401", "Connector:TestPoint", X2, Y0 + 8 * DY, 0, "TP", TPFP, {"1": "SAFEBOOT"})
-    P.rails_at(g(80), g(84))
+            {"1": "GNSS_RFIN", "2": "GND", "3": "GND"}, **UFL)
+    P.place("TP401", "Connector:TestPoint", X2, Y0 + 8 * DY, 0, "TP", TPFP, {"1": "GNSS_TXD"})
+    P.place("TP402", "Connector:TestPoint", X2 + g(6), Y0 + 8 * DY, 0, "TP", TPFP, {"1": "GNSS_RXD"})
+    P.place("BT401", "Device:Battery_Cell", g(140), Y0 + 4 * DY, 0, "MS621FE-FL11E",
+            "Battery:BatteryHolder_Seiko_MS621F", {"1": "V_BCKP", "2": "GND"},
+            **{"MPN": "MS621FE-FL11E", "Manufacturer": "Seiko Instruments",
+               "Description": "Li-Mn recargable 3 V 5,5 mAh; SIN reflujo: soldar a mano al final (≤ 5 s, pila < 85 °C)"})
+    P.rails_at(g(80), g(96))
     P.flag("V_BCKP")
+    P.text(g(13), g(18), "A · ME31GR02 (V_GNSS = BUCK1, conmutado · RESET al aire: pull-up interno)   "
+                         "B · UART con 1 kΩ · R405 DNP · TP401/TP402   C · respaldo: BT401 MS621FE desde 3V3 por "
+                         "D401 + R401   D · antena U.FL: L401 47 nH alimenta antena activa · R404 DNP · docs/04_gnss.svg")
+    P.text(g(130), g(56), "BT401: SOLDAR A MANO después del reflujo (Seiko: sin reflujo)")
     return P
 
 
