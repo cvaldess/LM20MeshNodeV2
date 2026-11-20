@@ -23,13 +23,13 @@ phone over Bluetooth LE.
 
 ## Features
 
-- **MCU:** Minew ME54BS13 (nRF54LM20A, Bluetooth LE with integrated antenna), USB-C to the
+- **MCU:** Minew [nRF54LM20A-ME54BS13](https://en.minewsemi.com/bluetooth-module/nrf54lm20a-me54bs13) (nRF54LM20A, Bluetooth LE with integrated antenna), USB-C to the
   nRF54LM20A USB port, 2×5 1.27 mm Cortex Debug (SWD) header (J201) and debug UART pads.
-- **LoRa:** Minew MS21SF1-SX1262 (SX1262, up to 22 dBm). The antenna goes to the U.FL
+- **LoRa:** Minew [MS21SF1-SX1262](https://en.minewsemi.com/lora-module/llcc68-sx1262-me21ls1a) (SX1262, up to 22 dBm). The antenna goes to the U.FL
   connector on the module itself. The RF switch inside the module is driven by DIO2, so the
   MCU drives no RXEN/TXEN line. The module supply has its own filter footprint: FB301 (0 Ω,
   or a ferrite bead) and C303.
-- **GNSS:** Minew ME31GR02 (Beken BK166X chip) with U.FL antenna connector (J401). L401 (47 nH)
+- **GNSS:** Minew [ME31GR02](https://en.minewsemi.com/gnss-module/me31gr02) (Beken BK166X chip) with U.FL antenna connector (J401). L401 (47 nH)
   feeds an active antenna from the module's VCC_RF output; a passive antenna also works if it
   is not a DC short. The GNSS supply (nPM1300 BUCK1) is off at power-up and is switched by
   firmware.
